@@ -12,8 +12,8 @@ webtalk*.log
 webtalk*.jou
 
 # HLS tool-generated solution directories (regenerable via the *.tcl scripts that drive them)
-hls/graphsage_int8_po2/solution1/
-hls/cora_graphsage_hls_test_bundle/build/*/hls/*/solution1/
+exploration/hls/graphsage_int8_po2/solution1/
+exploration/hls/cora_graphsage_hls_test_bundle/build/*/hls/*/solution1/
 **/solution1/.autopilot/
 **/solution1/csim/
 **/solution1/sim/
@@ -35,6 +35,6 @@ transfer/
 # Misc large scratch
 cong/
 
-# Note: slurm/logs/ and campaigns/*/logs/ are intentionally NOT ignored —
-# they're the small (~25MB total), load-bearing evidence artifacts this
-# audit relied on (csim/cosim/vivado job output). Keep them for provenance.
+# Note: exploration/slurm/logs/ and campaigns/*/logs/ are intentionally NOT
+# ignored — they're the small (~25MB total) raw csim/cosim/Vivado job output
+# behind the result CSVs. Keep them for provenance.

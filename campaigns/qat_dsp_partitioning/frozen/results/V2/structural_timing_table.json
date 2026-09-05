@@ -1,0 +1,179 @@
+{
+  "audit_csv": "/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_V2_route_default/reports/structural_timing_paths.csv",
+  "negative_paths": 702,
+  "categories": {
+    "aggregation_dsp_input": {
+      "endpoints": 359,
+      "worst_slack_ns": -0.168,
+      "accumulated_negative_slack_ns": 21.81,
+      "average_routing_fraction": 0.7768,
+      "max_fanout": 140,
+      "average_max_fanout": 34.14,
+      "startpoint_primitives": [
+        "FDRE"
+      ],
+      "endpoint_primitives": [
+        "DSP_A_B_DATA",
+        "DSP_PREADD_DATA",
+        "FDRE"
+      ],
+      "hierarchies": [
+        "aggregation/addmul DSP fabric",
+        "hidden/L1-to-L2 staging",
+        "top-level or flattened"
+      ]
+    },
+    "dsp_pipeline_output": {
+      "endpoints": 20,
+      "worst_slack_ns": -0.133,
+      "accumulated_negative_slack_ns": 0.936,
+      "average_routing_fraction": 0.7418,
+      "max_fanout": 140,
+      "average_max_fanout": 115.4,
+      "startpoint_primitives": [
+        "FDRE"
+      ],
+      "endpoint_primitives": [
+        "DSP_A_B_DATA"
+      ],
+      "hierarchies": [
+        "aggregation/addmul DSP fabric"
+      ]
+    },
+    "fabric_multiplier": {
+      "endpoints": 254,
+      "worst_slack_ns": -0.161,
+      "accumulated_negative_slack_ns": 11.647,
+      "average_routing_fraction": 0.6834,
+      "max_fanout": 182,
+      "average_max_fanout": 119.69,
+      "startpoint_primitives": [
+        "FDRE"
+      ],
+      "endpoint_primitives": [
+        "FDRE"
+      ],
+      "hierarchies": [
+        "grp_l1_neighbor_channel_false_16_s_fu_6848",
+        "grp_l1_neighbor_channel_false_18_s_fu_7096",
+        "grp_l1_neighbor_channel_false_20_s_fu_7344",
+        "grp_l1_neighbor_channel_false_22_s_fu_7476",
+        "grp_l1_neighbor_channel_false_23_s_fu_7600",
+        "grp_l1_root_channel_false_0_s_fu_2716",
+        "grp_l1_root_channel_false_10_s_fu_2584",
+        "grp_l1_root_channel_false_8_s_fu_2452",
+        "grp_l2_neighbor_channel_false_1_s_fu_9100"
+      ]
+    },
+    "adder_carry8_reduction": {
+      "endpoints": 44,
+      "worst_slack_ns": -0.155,
+      "accumulated_negative_slack_ns": 2.588,
+      "average_routing_fraction": 0.7449,
+      "max_fanout": 140,
+      "average_max_fanout": 23.64,
+      "startpoint_primitives": [
+        "FDRE"
+      ],
+      "endpoint_primitives": [
+        "FDRE"
+      ],
+      "hierarchies": [
+        "grp_l1_neighbor_channel_false_10_s_fu_6072",
+        "grp_l1_neighbor_channel_false_23_s_fu_7600",
+        "grp_l1_neighbor_channel_false_4_s_fu_5444",
+        "grp_l1_neighbor_channel_false_6_s_fu_5692",
+        "grp_l1_neighbor_channel_false_7_s_fu_5816",
+        "grp_l2_neighbor_channel_false_4_s_fu_9616",
+        "hidden/L1-to-L2 staging",
+        "top-level or flattened"
+      ]
+    },
+    "requantization_shift_clamp": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    },
+    "pipeline_enable_ce_reset": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    },
+    "ordinary_data_register_routing": {
+      "endpoints": 25,
+      "worst_slack_ns": -0.137,
+      "accumulated_negative_slack_ns": 1.035,
+      "average_routing_fraction": 0.9654,
+      "max_fanout": 17,
+      "average_max_fanout": 4.88,
+      "startpoint_primitives": [
+        "FDRE",
+        "FDSE"
+      ],
+      "endpoint_primitives": [
+        "FDRE"
+      ],
+      "hierarchies": [
+        "grp_l2_neighbor_channel_false_1_s_fu_9100",
+        "grp_l2_neighbor_channel_false_5_s_fu_9788",
+        "grp_l2_root_channel_false_0_s_fu_7724",
+        "grp_l2_root_channel_false_5_s_fu_8584",
+        "hidden/L1-to-L2 staging"
+      ]
+    },
+    "output_staging": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    },
+    "other": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    }
+  },
+  "global_wns_path": {
+    "rank": "1",
+    "slack_ns": "-0.168",
+    "datapath_delay_ns": "2.671",
+    "logic_delay_ns": "0.352",
+    "route_delay_ns": "2.319",
+    "logic_levels": "2",
+    "skew_ns": "0.008",
+    "start_cell": "hidden_308_reg_110293_pp0_iter19_reg_reg[0]",
+    "start_ref": "FDRE",
+    "start_hierarchy": "NA",
+    "end_cell": "am_addmul_9ns_9ns_13ns_23_4_1_U14726/graphsage_po2_qat_partitioned_am_addmul_9ns_9ns_13ns_23_4_1_DSP48_0_U/p_reg_reg/DSP_PREADD_DATA_INST",
+    "end_ref": "DSP_PREADD_DATA",
+    "end_hierarchy": "am_addmul_9ns_9ns_13ns_23_4_1_U14726/graphsage_po2_qat_partitioned_am_addmul_9ns_9ns_13ns_23_4_1_DSP48_0_U/p_reg_reg",
+    "max_fanout": "17",
+    "average_fanout": "7.6",
+    "primitive_chain": "FDRE>LUT6>CARRY8>DSP_PREADD_DATA",
+    "category": "aggregation_dsp_input",
+    "hierarchy_hint": "aggregation/addmul DSP fabric"
+  }
+}

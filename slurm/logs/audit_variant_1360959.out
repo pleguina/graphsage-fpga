@@ -1,0 +1,109 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Tue Aug 25 02:21:24 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source campaigns/qat_dsp_partitioning/hls/audit_channel_criticality.tcl
+# if {$argc != 2} {
+#     error "Usage: vivado -mode batch -source audit_channel_criticality.tcl -tclargs <checkpoint> <output.csv>"
+# }
+# set checkpoint [lindex $argv 0]
+# set output_csv [lindex $argv 1]
+# open_checkpoint $checkpoint
+Command: open_checkpoint /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_V2A1_fab4_route_default/final.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1545.352 ; gain = 0.000 ; free physical = 187035 ; free virtual = 252319
+INFO: [Device 21-403] Loading part xcvu13p-fsga2577-1-e
+Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3658.883 ; gain = 17.000 ; free physical = 184943 ; free virtual = 250230
+INFO: [Netlist 29-17] Analyzing 47934 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 3 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.61 ; elapsed = 00:00:00.64 . Memory (MB): peak = 4088.508 ; gain = 47.422 ; free physical = 184519 ; free virtual = 249806
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-5170] The checkpoint was created with non-default parameter values which do not match the current Vivado settings.  Mismatching parameters are:
+  general.maxThreads
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.85 ; elapsed = 00:00:00.87 . Memory (MB): peak = 5817.887 ; gain = 0.000 ; free physical = 182869 ; free virtual = 248156
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5817.887 ; gain = 0.000 ; free physical = 182869 ; free virtual = 248156
+Read PlaceDB: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 6376.777 ; gain = 558.891 ; free physical = 182313 ; free virtual = 247599
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6376.777 ; gain = 0.000 ; free physical = 182313 ; free virtual = 247599
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 6679.980 ; gain = 303.203 ; free physical = 182012 ; free virtual = 247299
+Read Physdb Files: Time (s): cpu = 00:00:35 ; elapsed = 00:00:25 . Memory (MB): peak = 6679.980 ; gain = 862.094 ; free physical = 182012 ; free virtual = 247299
+Restored from archive | CPU: 35.710000 secs | Memory: 771.793503 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:35 ; elapsed = 00:00:25 . Memory (MB): peak = 6679.980 ; gain = 862.094 ; free physical = 182012 ; free virtual = 247299
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 6679.980 ; gain = 0.000 ; free physical = 182009 ; free virtual = 247296
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 552 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 552 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:02:23 ; elapsed = 00:02:13 . Memory (MB): peak = 6680.016 ; gain = 5134.664 ; free physical = 182012 ; free virtual = 247299
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'to' option of 'get_timing_paths' is very large: 406614. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'from' option of 'get_timing_paths' is very large: 406614. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ap_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+get_timing_paths: Time (s): cpu = 00:05:09 ; elapsed = 00:01:04 . Memory (MB): peak = 7485.418 ; gain = 805.402 ; free physical = 181243 ; free virtual = 246530
+# set paths [get_timing_paths \
+#     -from [all_registers] \
+#     -to [all_registers] \
+#     -delay_type max \
+#     -max_paths 1000 \
+#     -unique_pins \
+#     -nworst 1]
+# file mkdir [file dirname $output_csv]
+# set output [open $output_csv w]
+# puts $output "rank,slack_ns,start_cell,end_cell"
+# set rank 0
+# foreach path $paths {
+#     incr rank
+#     set start_pin [get_property STARTPOINT_PIN $path]
+#     set end_pin [get_property ENDPOINT_PIN $path]
+#     set start_cell [get_cells -quiet -of_objects $start_pin]
+#     set end_cell [get_cells -quiet -of_objects $end_pin]
+#     puts $output [join [list \
+#         $rank \
+#         [get_property SLACK $path] \
+#         $start_cell \
+#         $end_cell] ","]
+# }
+# close $output
+# puts "L2_CHANNEL_AUDIT=$output_csv"
+L2_CHANNEL_AUDIT=/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_V2A1_fab4_route_default/reports/channel_criticality_paths.csv
+# puts "L2_CHANNEL_AUDIT_COUNT=$rank"
+L2_CHANNEL_AUDIT_COUNT=1000
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 25 02:24:47 2026...
+layer  branch    ch  endpoints   worst_ns     TNS_ns  dsp_est    TNS/DSP    WNS/DSP  global
+1      root       0          5     -0.076      0.292      112     0.0026     0.0007   False
+1      root      18          8     -0.045      0.214      120     0.0018     0.0004   False
+1      root       2          2     -0.083      0.140      120     0.0012     0.0007   False
+1      root      12          3     -0.058      0.138      120     0.0012     0.0005   False
+1      root       7          3     -0.034      0.066      120     0.0006     0.0003   False
+1      root      19          3     -0.031      0.057      112     0.0005     0.0003   False
+1      root      23          3     -0.029      0.039      120     0.0003     0.0002   False
+2      root       0          1     -0.011      0.011      168     0.0001     0.0001   False
+1      root      20          1     -0.002      0.002      120     0.0000     0.0000   False
+GLOBAL_SAMPLE_WNS_NS=-0.099
+GLOBAL_SAMPLE_WNS_OWNER=None
+UNCLASSIFIED_CATEGORY=aggregation_dsp_input paths=18 unique_end_cells=18 tns_ns=0.505 worst_ns=-0.090
+UNCLASSIFIED_CATEGORY=control_enable paths=0 unique_end_cells=0 tns_ns=0.000 worst_ns=0.000
+UNCLASSIFIED_CATEGORY=adder_saturation_quantization paths=2 unique_end_cells=2 tns_ns=0.137 worst_ns=-0.076
+UNCLASSIFIED_CATEGORY=pipeline_registers paths=21 unique_end_cells=21 tns_ns=0.764 worst_ns=-0.099
+UNCLASSIFIED_CATEGORY=unknown paths=17 unique_end_cells=17 tns_ns=0.426 worst_ns=-0.086
+UNCLASSIFIED_PATHS=58/1000
+CHANNEL_CRITICALITY_TABLE=/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_V2A1_fab4_route_default/reports/channel_criticality_table.json

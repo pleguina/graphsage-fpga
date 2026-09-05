@@ -1,0 +1,621 @@
+WIDTH_TAG=h8 GS_HIDDEN_FEATURES=8
+
+****** vitis-run v2025.2 (64-bit)
+  **** SW Build 6295257 on 2025-11-13-01:29:13
+  **** Start of session at: Fri Aug 28 11:20:30 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+  **** HLS Build v2025.2 6295257
+Sourcing Tcl script '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/run_hls_width.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1 
+WARNING: [HLS 200-2182] The 'cora_root_dynamic_const_weights_h8_2024_1' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Creating and opening solution '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1'.
+INFO: [HLS 200-1510] Running: set_top graphsage_root_dynamic_const_weights 
+INFO: [HLS 200-1510] Running: add_files /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp -cflags -std=c++17 -I/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8 -DGS_HIDDEN_FEATURES=8 
+INFO: [HLS 200-10] Adding design file '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/testbench_root_dynamic_const_weights.cpp -cflags -std=c++17 -I/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8 -DGS_HIDDEN_FEATURES=8 
+INFO: [HLS 200-10] Adding test bench file '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/testbench_root_dynamic_const_weights.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu13p-fsga2577-1-e 
+INFO: [HLS 200-1611] Setting target device to 'xcvu13p-fsga2577-1-e'
+INFO: [HLS 200-1510] Running: create_clock -period 2.77 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 2.77ns.
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 1.0 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1ns.
+INFO: [HLS 200-1510] Running: config_op mul -impl dsp -latency 3 
+INFO: [HLS 200-1445] Configure operator 'mul' with implementation style 'dsp'.
+INFO: [HLS 200-1446] Configure operator 'mul' with latency 3.
+INFO: [HLS 200-1510] Running: config_schedule -enable_dsp_full_reg 
+WIDTH_TAG=h8
+GS_HIDDEN_FEATURES=8
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 3.21 seconds. CPU system time: 0.15 seconds. Elapsed time: 3.45 seconds; current allocated memory: 609.859 MB.
+INFO: [HLS 200-2191] C-Synthesis will use clang-16 as the compiler
+INFO: [HLS 200-10] Analyzing design file '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 21.19 seconds. CPU system time: 0.94 seconds. Elapsed time: 22.46 seconds; current allocated memory: 612.422 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 9,982 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 57,104 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 42,657 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 42,657 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 42,657 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 58,056 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 37,480 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 37,664 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 37,530 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 37,394 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 37,026 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 37,026 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 37,026 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 37,026 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 37,124 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 37,127 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-131] Inlining function 'root_popcount(ap_uint<8>)' into 'void root_dynamic_mean<16, 12>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [16])' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:282:33)
+INFO: [HLS 214-131] Inlining function 'root_int8_clamp(ap_int<48>)' into 'void root_dynamic_mean<16, 12>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [16])' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:312:37)
+INFO: [HLS 214-131] Inlining function 'root_degree_scale(ap_uint<4>)' into 'void root_dynamic_mean<16, 12>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [16])' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:283:35)
+INFO: [HLS 214-131] Inlining function 'root_int8_clamp(ap_int<48>)' into 'void root_dual_linear<16, 8, 11, 11>(ap_int<8> const (*) [16], ap_int<8> const (*) [16], ap_int<8> const (*) [16], ap_int<8> const (*) [16], ap_int<32> const*, ap_int<8> (*) [8])' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:358:41)
+INFO: [HLS 214-131] Inlining function 'root_popcount(ap_uint<8>)' into 'void root_dynamic_mean<8, 12>(ap_int<8> const (*) [8], ap_uint<8> const*, ap_int<8> (*) [8])' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:282:33)
+INFO: [HLS 214-131] Inlining function 'root_int8_clamp(ap_int<48>)' into 'void root_dynamic_mean<8, 12>(ap_int<8> const (*) [8], ap_uint<8> const*, ap_int<8> (*) [8])' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:312:37)
+INFO: [HLS 214-131] Inlining function 'root_degree_scale(ap_uint<4>)' into 'void root_dynamic_mean<8, 12>(ap_int<8> const (*) [8], ap_uint<8> const*, ap_int<8> (*) [8])' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:283:35)
+INFO: [HLS 214-131] Inlining function 'root_int8_clamp(ap_int<48>)' into 'void root_dual_linear<8, 7, 9, 9>(ap_int<8> const (*) [8], ap_int<8> const (*) [8], ap_int<8> const (*) [8], ap_int<8> const (*) [8], ap_int<32> const*, ap_int<8> (*) [7])' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:358:41)
+INFO: [HLS 214-131] Inlining function 'void root_dynamic_mean<16, 12>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [16])' into 'graphsage_root_dynamic_const_weights(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [7])' (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:35:5)
+INFO: [HLS 214-131] Inlining function 'void root_dual_linear<8, 7, 9, 9>(ap_int<8> const (*) [8], ap_int<8> const (*) [8], ap_int<8> const (*) [8], ap_int<8> const (*) [8], ap_int<32> const*, ap_int<8> (*) [7])' into 'graphsage_root_dynamic_const_weights(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [7])' (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:52:5)
+INFO: [HLS 214-131] Inlining function 'void root_dynamic_mean<8, 12>(ap_int<8> const (*) [8], ap_uint<8> const*, ap_int<8> (*) [8])' into 'graphsage_root_dynamic_const_weights(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [7])' (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:51:5)
+INFO: [HLS 214-131] Inlining function 'void root_dual_linear<16, 8, 11, 11>(ap_int<8> const (*) [16], ap_int<8> const (*) [16], ap_int<8> const (*) [16], ap_int<8> const (*) [16], ap_int<32> const*, ap_int<8> (*) [8])' into 'graphsage_root_dynamic_const_weights(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [7])' (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36:5)
+INFO: [HLS 214-291] Loop 'ROOT_LINEAR_NODE' is marked as complete unroll implied by the pipeline pragma (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:330:5)
+INFO: [HLS 214-291] Loop 'ROOT_LINEAR_OUTPUT' is marked as complete unroll implied by the pipeline pragma (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:333:9)
+INFO: [HLS 214-291] Loop 'ROOT_LINEAR_INPUT' is marked as complete unroll implied by the pipeline pragma (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:338:13)
+INFO: [HLS 214-291] Loop 'ROOT_AGG_NODE' is marked as complete unroll implied by the pipeline pragma (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:280:5)
+INFO: [HLS 214-291] Loop 'ROOT_AGG_FEATURE' is marked as complete unroll implied by the pipeline pragma (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:285:9)
+INFO: [HLS 214-291] Loop 'ROOT_RELU_NODE' is marked as complete unroll implied by the pipeline pragma (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:42:5)
+INFO: [HLS 214-291] Loop 'ROOT_RELU_FEATURE' is marked as complete unroll implied by the pipeline pragma (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:45:9)
+INFO: [HLS 214-186] Unrolling loop 'ROOT_LINEAR_NODE' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:330:5) in function 'graphsage_root_dynamic_const_weights' completely with a factor of 8 (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'ROOT_LINEAR_OUTPUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:333:9) in function 'graphsage_root_dynamic_const_weights' completely with a factor of 7 (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'ROOT_LINEAR_INPUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:338:13) in function 'graphsage_root_dynamic_const_weights' completely with a factor of 8 (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'ROOT_AGG_NODE' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:280:5) in function 'graphsage_root_dynamic_const_weights' completely with a factor of 8 (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'ROOT_AGG_FEATURE' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:285:9) in function 'graphsage_root_dynamic_const_weights' completely with a factor of 8 (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'ROOT_RELU_NODE' (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:42:5) in function 'graphsage_root_dynamic_const_weights' completely with a factor of 8 (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'ROOT_RELU_FEATURE' (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:45:9) in function 'graphsage_root_dynamic_const_weights' completely with a factor of 8 (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'ROOT_LINEAR_OUTPUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:333:9) in function 'graphsage_root_dynamic_const_weights' completely with a factor of 8 (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'ROOT_LINEAR_INPUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:338:13) in function 'graphsage_root_dynamic_const_weights' completely with a factor of 16 (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'ROOT_AGG_FEATURE' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:285:9) in function 'graphsage_root_dynamic_const_weights' completely with a factor of 16 (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'aggregate1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:25:12)
+INFO: [HLS 214-248] Applying array_partition to 'hidden': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:26:12)
+INFO: [HLS 214-248] Applying array_partition to 'aggregate2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:27:12)
+INFO: [HLS 214-248] Applying array_partition to 'input': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'edge_masks': Complete partitioning on dimension 1. (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'output': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_15' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_14' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_13' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_12' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_11' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_10' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_9' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_8' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_7' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_15' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_14' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_13' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_12' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_11' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_10' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_9' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_8' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_7' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_15' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_14' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_13' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_12' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_11' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_10' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_9' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_8' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_7' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_15' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_14' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_13' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_12' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_11' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_10' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_9' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_8' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_7' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_15' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_14' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_13' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_12' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_11' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_10' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_9' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_8' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_7' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_15' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_14' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_13' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_12' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_11' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_10' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_9' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_8' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_7' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_15' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_14' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_13' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_12' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_11' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_10' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_9' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_8' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_7' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_15' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_14' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_13' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_12' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_11' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_10' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_9' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_8' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_7' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_6' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_5' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_4' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_3' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_2' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_1' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_0' with compact=bit mode in 8-bits (hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:7:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 35.31 seconds. CPU system time: 0.55 seconds. Elapsed time: 40.85 seconds; current allocated memory: 627.594 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 627.594 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 4.07 seconds. CPU system time: 0.04 seconds. Elapsed time: 4.19 seconds; current allocated memory: 686.402 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 62.67 seconds. CPU system time: 0.02 seconds. Elapsed time: 62.86 seconds; current allocated memory: 692.676 MB.
+INFO: [XFORM 203-11] Balancing expressions in function 'graphsage_root_dynamic_const_weights' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:3:64)...2808 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 81.83 seconds. CPU system time: 0.07 seconds. Elapsed time: 82.15 seconds; current allocated memory: 863.684 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 37.43 seconds. CPU system time: 0.04 seconds. Elapsed time: 37.63 seconds; current allocated memory: 980.566 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'graphsage_root_dynamic_const_weights' ...
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:346->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36): 'return' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:347->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'input_0_0', which is not an operation.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:346->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'select' operation 8 bit ('aggregate1', cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:78->cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:312->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:35) due to incompatible operation sets.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:347->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'input_1_0', which is not an operation.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:346->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'select' operation 8 bit ('aggregate1', cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:78->cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:312->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:35) due to incompatible operation sets.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:347->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'input_2_0', which is not an operation.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:346->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'select' operation 8 bit ('aggregate1', cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:78->cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:312->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:35) due to incompatible operation sets.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:347->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'input_3_0', which is not an operation.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:346->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'select' operation 8 bit ('aggregate1', cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:78->cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:312->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:35) due to incompatible operation sets.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:347->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'input_4_0', which is not an operation.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:346->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'select' operation 8 bit ('aggregate1', cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:78->cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:312->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:35) due to incompatible operation sets.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:347->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'input_5_0', which is not an operation.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:346->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'select' operation 8 bit ('aggregate1', cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:78->cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:312->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:35) due to incompatible operation sets.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:347->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'input_6_0', which is not an operation.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:346->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'select' operation 8 bit ('aggregate1', cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:78->cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:312->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:35) due to incompatible operation sets.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:347->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'input_7_0', which is not an operation.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:346->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:36) on 'select' operation 8 bit ('aggregate1', cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:78->cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.h:312->hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights_h8/graphsage_root_dynamic_const_weights.cpp:35) due to incompatible operation sets.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'graphsage_root_dynamic_const_weights' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'graphsage_root_dynamic_const_weights'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 42, function 'graphsage_root_dynamic_const_weights'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 22.18 seconds. CPU system time: 0.15 seconds. Elapsed time: 22.41 seconds; current allocated memory: 1.063 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 10.06 seconds. CPU system time: 0.09 seconds. Elapsed time: 10.58 seconds; current allocated memory: 1.063 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'graphsage_root_dynamic_const_weights' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_0_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_1_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_2_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_3_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_4_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_5_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_6_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/input_7_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/edge_masks_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/edge_masks_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/edge_masks_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/edge_masks_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/edge_masks_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/edge_masks_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/edge_masks_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/edge_masks_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_0_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_0_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_0_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_0_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_0_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_0_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_0_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_1_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_1_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_1_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_1_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_1_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_1_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_1_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_2_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_2_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_2_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_2_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_2_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_2_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_2_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_3_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_3_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_3_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_3_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_3_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_3_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_3_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_4_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_4_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_4_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_4_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_4_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_4_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_4_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_5_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_5_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_5_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_5_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_5_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_5_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_5_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_6_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_6_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_6_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_6_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_6_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_6_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_6_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_7_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_7_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_7_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_7_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_7_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_7_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_root_dynamic_const_weights/output_7_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on function 'graphsage_root_dynamic_const_weights' to 'ap_ctrl_none'.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'graphsage_root_dynamic_const_weights' pipeline 'graphsage_root_dynamic_const_weights' pipeline type 'function pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'graphsage_root_dynamic_const_weights' is 119253 from HDL expression: ((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0))
+INFO: [RTGEN 206-100] Generating core module 'add_10ns_10ns_10_2_1': 56 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'add_11ns_11ns_11_2_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'add_11s_11s_11_2_1': 128 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_13ns_10ns_23_5_1': 56 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_13ns_11ns_24_5_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_13ns_11s_24_5_1': 128 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_3s_10_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_4ns_10_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_4s_11_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_5s_12_4_1': 24 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_6ns_12_4_1': 40 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_6s_13_4_1': 64 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_7ns_13_4_1': 104 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_7s_14_4_1': 128 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_8ns_14_4_1': 208 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_8s_15_4_1': 216 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8ns_3ns_10_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8ns_7ns_14_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8ns_8ns_15_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8ns_8s_16_4_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_2s_10_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_3ns_11_4_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_3s_11_4_1': 56 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_4ns_12_4_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_4s_12_4_1': 24 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_5ns_13_4_1': 56 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_5s_13_4_1': 48 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_6ns_14_4_1': 128 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_6s_14_4_1': 80 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_7ns_15_4_1': 248 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_7s_15_4_1': 272 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_8ns_16_4_1': 432 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_8s_16_4_1': 544 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_4_13_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'graphsage_root_dynamic_const_weights'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 12.95 seconds. CPU system time: 0.24 seconds. Elapsed time: 13.98 seconds; current allocated memory: 1.235 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 36.49 seconds. CPU system time: 1.37 seconds. Elapsed time: 43.21 seconds; current allocated memory: 1.644 GB.
+INFO: [HLS 200-2225] Wrote inferred directives to file /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_root_dynamic_const_weights_h8_2024_1/solution1/syn/inferred_directives.ini
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 3.57 seconds. CPU system time: 0.14 seconds. Elapsed time: 3.8 seconds; current allocated memory: 1.779 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for graphsage_root_dynamic_const_weights.
+INFO: [VLOG 209-307] Generating Verilog RTL for graphsage_root_dynamic_const_weights.
+INFO: [HLS 200-789] **** Estimated Fmax: 570.21 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:05:47; Allocated memory: 1.183 GB.
+ROOT_DYNAMIC_WIDTH_HLS_COMPLETE=1
+INFO: [HLS 200-1510] Running: close_project 
+INFO: [HLS 200-112] Total CPU user time: 334.04 seconds. Total CPU system time: 4.8 seconds. Total elapsed time: 355.62 seconds; peak allocated memory: 1.779 GB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 5m 57s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

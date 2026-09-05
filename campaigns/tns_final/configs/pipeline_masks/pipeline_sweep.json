@@ -1,0 +1,12 @@
+{
+  "description": "Pipeline-cut sweep (Section 7). Fixed DSP policy = A2/A4 selective mask (L1_NEIGHBOR_MASK=0x1004, AGGREGATION_MODE=4). Only the accumulator pipeline masks vary. P0 and P5 already exist as A2 (V2A1) and A4 (V2A1_allcut). P1/P2/P4 are HLS-only (clearly non-competitive in isolation per plan Section 7.1). P0, P3, P5 are routed.",
+  "fixed_masks": {"L1_NEIGHBOR_MASK": "0x1004", "AGGREGATION_MODE": 4},
+  "variants": {
+    "P0": {"label": "no accumulator cuts", "pipeline_masks": {}, "routed": true, "run_dir": "build/vivado_sweep/qat_dsp_V2A1_route_default", "status": "existing (reused as V2A1/A2)"},
+    "P1": {"label": "L1 root cuts only", "pipeline_masks": {"L1_ROOT_ACC_PIPELINE_MASK": "0xFFFFFF"}, "routed": false, "hls_project": "transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_P1_2024_1", "status": "new - HLS-only, submitted this session"},
+    "P2": {"label": "L1 neighbor cuts only", "pipeline_masks": {"L1_NEIGHBOR_ACC_PIPELINE_MASK": "0xFFFFFF"}, "routed": false, "hls_project": "transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_P2_2024_1", "status": "new - HLS-only, submitted this session"},
+    "P3": {"label": "all L1 cuts (root + neighbor), no L2 cuts", "pipeline_masks": {"L1_ROOT_ACC_PIPELINE_MASK": "0xFFFFFF", "L1_NEIGHBOR_ACC_PIPELINE_MASK": "0xFFFFFF"}, "routed": true, "hls_project": "transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_P3_2024_1", "run_dir": "build/vivado_sweep/qat_dsp_P3_route_default", "status": "new - submitted this session"},
+    "P4": {"label": "all L2 cuts only", "pipeline_masks": {"L2_ROOT_ACC_PIPELINE_MASK": "0x7F", "L2_NEIGHBOR_ACC_PIPELINE_MASK": "0x7F"}, "routed": false, "hls_project": "transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_P4_2024_1", "status": "new - HLS-only, submitted this session"},
+    "P5": {"label": "all L1 + L2 cuts", "pipeline_masks": {"L1_ROOT_ACC_PIPELINE_MASK": "0xFFFFFF", "L1_NEIGHBOR_ACC_PIPELINE_MASK": "0xFFFFFF", "L2_ROOT_ACC_PIPELINE_MASK": "0x7F", "L2_NEIGHBOR_ACC_PIPELINE_MASK": "0x7F"}, "routed": true, "run_dir": "build/vivado_sweep/qat_dsp_V2A1_allcut_route_default", "status": "existing (reused as V2A1_allcut/A4)"}
+  }
+}

@@ -1,0 +1,55 @@
+
+****** vitis-run v2025.2 (64-bit)
+  **** SW Build 6295257 on 2025-11-13-01:29:13
+  **** Start of session at: Mon Aug 24 13:01:21 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+  **** HLS Build v2025.2 6295257
+Sourcing Tcl script '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/po2_qat_root_dynamic_const_weights_partitioned/run_hls_variant.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_V2B_fabric_csim_2024_1 
+WARNING: [HLS 200-2182] The 'cora_po2_qat_V2B_fabric_csim_2024_1' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Creating and opening solution '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_V2B_fabric_csim_2024_1'.
+INFO: [HLS 200-1510] Running: set_top graphsage_po2_qat_partitioned 
+INFO: [HLS 200-1510] Running: add_files /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/po2_qat_root_dynamic_const_weights_partitioned/graphsage_po2_qat_partitioned.cpp -cflags -std=c++17 -I/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/po2_qat_root_dynamic_const_weights_partitioned -DL1_ROOT_DSP_MASK=0u -DL1_NEIGHBOR_DSP_MASK=4100u -DL2_ROOT_DSP_MASK=0u -DL2_NEIGHBOR_DSP_MASK=0u -DROOT_AGGREGATION_MODE=2 
+INFO: [HLS 200-10] Adding design file '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/po2_qat_root_dynamic_const_weights_partitioned/graphsage_po2_qat_partitioned.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/po2_qat_root_dynamic_const_weights_partitioned/testbench_partitioned.cpp -cflags -std=c++17 -I/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/po2_qat_root_dynamic_const_weights_partitioned -DL1_ROOT_DSP_MASK=0u -DL1_NEIGHBOR_DSP_MASK=4100u -DL2_ROOT_DSP_MASK=0u -DL2_NEIGHBOR_DSP_MASK=0u -DROOT_AGGREGATION_MODE=2 
+INFO: [HLS 200-10] Adding test bench file '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/po2_qat_root_dynamic_const_weights_partitioned/testbench_partitioned.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_V2B_fabric_csim_2024_1/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu13p-fsga2577-1-e 
+INFO: [HLS 200-1611] Setting target device to 'xcvu13p-fsga2577-1-e'
+INFO: [HLS 200-1510] Running: create_clock -period 2.77 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 2.77ns.
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 1.0 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1ns.
+INFO: [HLS 200-1510] Running: config_op mul -impl dsp -latency 3 
+INFO: [HLS 200-1445] Configure operator 'mul' with implementation style 'dsp'.
+INFO: [HLS 200-1446] Configure operator 'mul' with latency 3.
+INFO: [HLS 200-1510] Running: config_schedule -enable_dsp_full_reg 
+VARIANT=V2B_fabric_csim
+L1_ROOT_MASK=0
+L1_NEIGHBOR_MASK=4100
+L2_ROOT_MASK=0
+L2_NEIGHBOR_MASK=0
+AGGREGATION_MODE=2
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [HLS 200-2191] C-Simulation will use clang-16 as the compiler
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../../../hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/po2_qat_root_dynamic_const_weights_partitioned/testbench_partitioned.cpp in debug mode
+   Compiling ../../../../../../hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/po2_qat_root_dynamic_const_weights_partitioned/graphsage_po2_qat_partitioned.cpp in debug mode
+   Generating csim.exe
+PARTITIONED_BIT_EXACT_PASS graphs=256
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:28; Allocated memory: 0.000 MB.
+QAT_VARIANT_HLS_COMPLETE=1
+INFO: [HLS 200-1510] Running: close_project 
+INFO: [HLS 200-112] Total CPU user time: 29.22 seconds. Total CPU system time: 1.56 seconds. Total elapsed time: 34.78 seconds; peak allocated memory: 609.875 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 36s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

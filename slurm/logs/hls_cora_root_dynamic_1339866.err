@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights/generate_root_int8_po2.py", line 6, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'

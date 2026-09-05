@@ -1,0 +1,10 @@
+-------------------------------------
+| Tool Version : Vivado v.2025.2
+| Date         : Mon Aug 31 19:32:58 2026
+| Host         : <COMPUTE_NODE>
+| Design       : checkpoint_qat_dsp_h32_scaling_post_synth
+| Device       : xcvu13p-fsga2577-1-E-
+-------------------------------------
+
+For more information on clockInfo.txt clock routing debug file see https://support.xilinx.com/s/article/000035660?language=en_US
+

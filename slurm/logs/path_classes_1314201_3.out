@@ -1,0 +1,174 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Tue Aug 18 19:53:51 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source hls/report_vivado_post_place_path_classes.tcl
+# foreach required_env {RUN_NAME} {
+#     if {![info exists ::env($required_env)] || $::env($required_env) eq ""} {
+#         error "Missing required environment variable $required_env"
+#     }
+# }
+# set script_dir [file dirname [file normalize [info script]]]
+# set repo_root [file normalize [file join $script_dir ..]]
+# set run_dir [file join $repo_root build vivado_sweep $::env(RUN_NAME)]
+# set checkpoint [file join $run_dir post_place.dcp]
+# set reports_dir [file join $run_dir reports]
+# if {![file exists $checkpoint]} {
+#     error "Missing post-place checkpoint: $checkpoint"
+# }
+# file mkdir $reports_dir
+# set vivado_threads [expr {[info exists ::env(SLURM_CPUS_PER_TASK)] ? $::env(SLURM_CPUS_PER_TASK) : 8}]
+# set_param general.maxThreads $vivado_threads
+# proc path_wns {from_objects to_objects delay_type} {
+#     if {[llength $from_objects] == 0 || [llength $to_objects] == 0} {
+#         return "NA"
+#     }
+# 
+#     set paths [get_timing_paths \
+#         -from $from_objects \
+#         -to $to_objects \
+#         -delay_type $delay_type \
+#         -max_paths 100 \
+#         -quiet]
+# 
+#     if {[llength $paths] == 0} {
+#         return "NA"
+#     }
+# 
+#     return [get_property SLACK [lindex $paths 0]]
+# }
+# proc write_path_report {path from_objects to_objects delay_type} {
+#     if {[llength $from_objects] == 0 || [llength $to_objects] == 0} {
+#         set output [open $path w]
+#         puts $output "No objects found for this path class."
+#         close $output
+#         return
+#     }
+# 
+#     report_timing \
+#         -from $from_objects \
+#         -to $to_objects \
+#         -delay_type $delay_type \
+#         -max_paths 100 \
+#         -path_type full_clock_expanded \
+#         -file $path
+# }
+# open_checkpoint $checkpoint
+Command: open_checkpoint /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/screen_altspread_medium/post_place.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1473.922 ; gain = 7.938 ; free physical = 239656 ; free virtual = 250087
+INFO: [Device 21-403] Loading part xcvu13p-fsga2577-1-e
+Netlist sorting complete. Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3834.441 ; gain = 24.031 ; free physical = 213496 ; free virtual = 226263
+INFO: [Netlist 29-17] Analyzing 37864 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 24 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 5205.965 ; gain = 134.773 ; free physical = 200092 ; free virtual = 212881
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-5170] The checkpoint was created with non-default parameter values which do not match the current Vivado settings.  Mismatching parameters are:
+  general.maxThreads
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.96 ; elapsed = 00:00:00.97 . Memory (MB): peak = 8841.836 ; gain = 0.000 ; free physical = 164058 ; free virtual = 176866
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 8841.836 ; gain = 0.000 ; free physical = 164058 ; free virtual = 176866
+Read PlaceDB: Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 9278.570 ; gain = 436.734 ; free physical = 159705 ; free virtual = 172528
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9278.570 ; gain = 0.000 ; free physical = 159705 ; free virtual = 172528
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 9571.539 ; gain = 292.969 ; free physical = 157008 ; free virtual = 169852
+Read Physdb Files: Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 9571.539 ; gain = 729.703 ; free physical = 156989 ; free virtual = 169833
+Restored from archive | CPU: 32.620000 secs | Memory: 1059.598763 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 9571.539 ; gain = 729.703 ; free physical = 156941 ; free virtual = 169785
+Netlist sorting complete. Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.15 . Memory (MB): peak = 9571.539 ; gain = 0.000 ; free physical = 156691 ; free virtual = 169536
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4370 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 4216 instances
+  SRLC32E => SRL16E: 154 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:03:33 ; elapsed = 00:04:12 . Memory (MB): peak = 9571.574 ; gain = 8108.559 ; free physical = 156642 ; free virtual = 169487
+all_registers: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 9571.574 ; gain = 0.000 ; free physical = 156622 ; free virtual = 169469
+# set registers [all_registers]
+# set inputs [all_inputs]
+# set outputs [all_outputs]
+# write_path_report [file join $reports_dir timing_internal_setup.rpt] $registers $registers max
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'to' option of 'report_timing' is very large: 317213. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'from' option of 'report_timing' is very large: 317213. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Temperature grade: E, Delay Type: max.
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 100 -nworst 1 -delay_type max -sort_by slack.
+report_timing: Time (s): cpu = 00:10:18 ; elapsed = 00:10:27 . Memory (MB): peak = 12567.625 ; gain = 2996.051 ; free physical = 126462 ; free virtual = 139424
+# write_path_report [file join $reports_dir timing_internal_hold.rpt] $registers $registers min
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'to' option of 'report_timing' is very large: 317213. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'from' option of 'report_timing' is very large: 317213. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Temperature grade: E, Delay Type: min.
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 100 -nworst 1 -delay_type min -sort_by slack.
+report_timing: Time (s): cpu = 00:02:48 ; elapsed = 00:02:51 . Memory (MB): peak = 12661.625 ; gain = 94.000 ; free physical = 125570 ; free virtual = 138532
+# file copy -force \
+#     [file join $reports_dir timing_internal_setup.rpt] \
+#     [file join $reports_dir timing_reg_to_reg_setup.rpt]
+# file copy -force \
+#     [file join $reports_dir timing_internal_hold.rpt] \
+#     [file join $reports_dir timing_reg_to_reg_hold.rpt]
+# write_path_report [file join $reports_dir timing_reg_to_output_setup.rpt] $registers $outputs max
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'from' option of 'report_timing' is very large: 317213. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Temperature grade: E, Delay Type: max.
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 100 -nworst 1 -delay_type max -sort_by slack.
+report_timing: Time (s): cpu = 00:02:18 ; elapsed = 00:02:20 . Memory (MB): peak = 12702.625 ; gain = 41.000 ; free physical = 125200 ; free virtual = 138157
+# write_path_report [file join $reports_dir timing_reg_to_output_hold.rpt] $registers $outputs min
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'from' option of 'report_timing' is very large: 317213. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Temperature grade: E, Delay Type: min.
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 100 -nworst 1 -delay_type min -sort_by slack.
+report_timing: Time (s): cpu = 00:02:18 ; elapsed = 00:02:20 . Memory (MB): peak = 12806.625 ; gain = 104.000 ; free physical = 124087 ; free virtual = 137043
+# write_path_report [file join $reports_dir timing_input_to_reg_setup.rpt] $inputs $registers max
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'to' option of 'report_timing' is very large: 317213. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Temperature grade: E, Delay Type: max.
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 100 -nworst 1 -delay_type max -sort_by slack.
+report_timing: Time (s): cpu = 00:02:15 ; elapsed = 00:02:17 . Memory (MB): peak = 13006.625 ; gain = 200.000 ; free physical = 122829 ; free virtual = 135788
+# write_path_report [file join $reports_dir timing_input_to_reg_hold.rpt] $inputs $registers min
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'to' option of 'report_timing' is very large: 317213. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Temperature grade: E, Delay Type: min.
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 100 -nworst 1 -delay_type min -sort_by slack.
+report_timing: Time (s): cpu = 00:02:18 ; elapsed = 00:02:20 . Memory (MB): peak = 13083.625 ; gain = 77.000 ; free physical = 122634 ; free virtual = 134596
+# set summary [open [file join $reports_dir timing_path_class_wns.txt] w]
+# foreach {name from_objects to_objects} [list \
+#     internal $registers $registers \
+#     reg_to_output $registers $outputs \
+#     input_to_reg $inputs $registers] {
+#     set setup_wns [path_wns $from_objects $to_objects max]
+#     set hold_wns [path_wns $from_objects $to_objects min]
+#     puts $summary "${name}_setup_wns_ns=$setup_wns"
+#     puts $summary "${name}_hold_wns_ns=$hold_wns"
+#     puts "[string toupper $name]_SETUP_WNS_NS=$setup_wns"
+#     puts "[string toupper $name]_HOLD_WNS_NS=$hold_wns"
+# }
+INTERNAL_SETUP_WNS_NS=-1.669
+INTERNAL_HOLD_WNS_NS=-0.220
+REG_TO_OUTPUT_SETUP_WNS_NS=-1.918
+REG_TO_OUTPUT_HOLD_WNS_NS=2.248
+INPUT_TO_REG_SETUP_WNS_NS=3.609
+INPUT_TO_REG_HOLD_WNS_NS=-3.285
+# close $summary
+# puts "PATH_CLASS_REPORTS_COMPLETE=$::env(RUN_NAME)"
+PATH_CLASS_REPORTS_COMPLETE=screen_altspread_medium
+# close_design
+close_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 13946.625 ; gain = 0.000 ; free physical = 173219 ; free virtual = 177242
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 18 20:36:16 2026...

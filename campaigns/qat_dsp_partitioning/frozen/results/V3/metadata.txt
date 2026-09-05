@@ -1,0 +1,12 @@
+run_name=qat_dsp_V3_route_default
+place_directive=Default
+route_directive=Default
+screen_only=0
+tns_cleanup=1
+postroute_physopt=1
+post_place_phys_directive=
+clock_period_ns=2.77
+post_stage_setup_wns_ns=-0.167
+post_stage_hold_wns_ns=0.028
+runtime_seconds=4006
+status=timing_failed

@@ -1,0 +1,87 @@
+{
+  "audit_csv": "/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_V2A1_allcut_route_default/reports/channel_criticality_paths.csv",
+  "total_paths_in_sample": 1000,
+  "global_sample_wns_ns": -0.029,
+  "global_sample_wns_owner": null,
+  "unclassified_paths": 8,
+  "unclassified_categories": {
+    "aggregation_dsp_input": {
+      "paths": 0,
+      "unique_end_cells": 0,
+      "accumulated_negative_slack_ns": 0.0,
+      "worst_slack_ns": 0.0,
+      "examples": []
+    },
+    "control_enable": {
+      "paths": 0,
+      "unique_end_cells": 0,
+      "accumulated_negative_slack_ns": 0.0,
+      "worst_slack_ns": 0.0,
+      "examples": []
+    },
+    "adder_saturation_quantization": {
+      "paths": 0,
+      "unique_end_cells": 0,
+      "accumulated_negative_slack_ns": 0.0,
+      "worst_slack_ns": 0.0,
+      "examples": []
+    },
+    "pipeline_registers": {
+      "paths": 4,
+      "unique_end_cells": 4,
+      "accumulated_negative_slack_ns": 0.039,
+      "worst_slack_ns": -0.017,
+      "examples": [
+        {
+          "slack_ns": -0.017,
+          "start_cell": "hidden_314_reg_117012_pp0_iter25_reg_reg[2]",
+          "end_cell": "half1_169_reg_118073_reg[8]"
+        },
+        {
+          "slack_ns": -0.013,
+          "start_cell": "hidden_203_reg_115302_pp0_iter25_reg_reg[6]",
+          "end_cell": "half0_184_reg_118218_reg[8]"
+        },
+        {
+          "slack_ns": -0.008,
+          "start_cell": "edge_masks_6_0_data_reg_reg[5]",
+          "end_cell": "pair2_105_reg_99204_reg[8]"
+        },
+        {
+          "slack_ns": -0.001,
+          "start_cell": "hidden_198_reg_115226_pp0_iter25_reg_reg[3]",
+          "end_cell": "half0_200_reg_118378_reg[8]"
+        }
+      ]
+    },
+    "unknown": {
+      "paths": 4,
+      "unique_end_cells": 4,
+      "accumulated_negative_slack_ns": 0.058,
+      "worst_slack_ns": -0.029,
+      "examples": [
+        {
+          "slack_ns": -0.029,
+          "start_cell": "grp_l1_neighbor_channel_true_12_true_s_fu_6950/neighbor_acc_62_reg_5256_reg[13]",
+          "end_cell": "neighbor_output1_86_reg_112022_reg[7]"
+        },
+        {
+          "slack_ns": -0.018,
+          "start_cell": "grp_l2_root_channel_false_0_true_s_fu_8338/root_input_1_6_val_read_reg_5502_reg[4]",
+          "end_cell": "grp_l2_root_channel_false_4_true_s_fu_9026/mul_7ns_8s_15_4_0_U11576/buff0_reg[13]"
+        },
+        {
+          "slack_ns": -0.008,
+          "start_cell": "grp_l2_root_channel_false_0_true_s_fu_8338/root_input_1_6_val_read_reg_5502_reg[4]",
+          "end_cell": "grp_l2_root_channel_false_4_true_s_fu_9026/mul_7ns_8s_15_4_0_U11576/buff0_reg[14]"
+        },
+        {
+          "slack_ns": -0.003,
+          "start_cell": "grp_l1_neighbor_channel_true_12_true_s_fu_6950/neighbor_acc_62_reg_5256_reg[13]",
+          "end_cell": "neighbor_output1_86_reg_112022_reg[6]"
+        }
+      ]
+    }
+  },
+  "groups": []
+}

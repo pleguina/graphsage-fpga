@@ -1,0 +1,4 @@
+HOST=<COMPUTE_NODE>
+PACKAGE_ROOT=/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls
+HLS_ACTION=csynth
+Python NumPy 1.23.3

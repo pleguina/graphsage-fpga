@@ -1,0 +1,85 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Fri Aug 21 07:05:00 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source hls/report_graphsage_19c_const_data_paths.tcl
+# set script_dir [file dirname [file normalize [info script]]]
+# set repo_root [file normalize [file join $script_dir ..]]
+# set run_dir [file join $repo_root build vivado_sweep graphsage_19c_const_extra_net_delay]
+# set checkpoint [file join $run_dir final.dcp]
+# set reports_dir [file join $run_dir reports]
+# if {![file exists $checkpoint]} {
+#     error "Missing final checkpoint: $checkpoint"
+# }
+# open_checkpoint $checkpoint
+Command: open_checkpoint /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/graphsage_19c_const_extra_net_delay/final.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1733.816 ; gain = 8.906 ; free physical = 380617 ; free virtual = 447665
+INFO: [Device 21-403] Loading part xcvu13p-fsga2577-1-e
+Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 3103.293 ; gain = 0.000 ; free physical = 379188 ; free virtual = 446304
+INFO: [Netlist 29-17] Analyzing 2241 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3173.199 ; gain = 3.000 ; free physical = 379105 ; free virtual = 446243
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-5170] The checkpoint was created with non-default parameter values which do not match the current Vivado settings.  Mismatching parameters are:
+  general.maxThreads
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3639.750 ; gain = 0.000 ; free physical = 378697 ; free virtual = 445853
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3639.750 ; gain = 0.000 ; free physical = 378697 ; free virtual = 445853
+Read PlaceDB: Time (s): cpu = 00:00:00.62 ; elapsed = 00:00:00.63 . Memory (MB): peak = 3670.203 ; gain = 28.070 ; free physical = 378667 ; free virtual = 445823
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3670.203 ; gain = 0.000 ; free physical = 378667 ; free virtual = 445823
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 3973.969 ; gain = 303.766 ; free physical = 378329 ; free virtual = 445521
+Read Physdb Files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 3973.969 ; gain = 334.219 ; free physical = 378329 ; free virtual = 445521
+Restored from archive | CPU: 4.170000 secs | Memory: 308.759903 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 3973.969 ; gain = 334.219 ; free physical = 378329 ; free virtual = 445522
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3973.969 ; gain = 0.000 ; free physical = 378329 ; free virtual = 445521
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 80 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 80 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:22 ; elapsed = 00:02:27 . Memory (MB): peak = 3974.004 ; gain = 2251.094 ; free physical = 378327 ; free virtual = 445520
+# set data_pins [get_pins -hier -filter {REF_PIN_NAME == D}]
+# if {[llength $data_pins] == 0} {
+#     error "No register D pins found"
+# }
+# report_timing \
+#     -to $data_pins \
+#     -delay_type max \
+#     -max_paths 100 \
+#     -path_type full_clock_expanded \
+#     -file [file join $reports_dir timing_register_data_setup_final.rpt]
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Temperature grade: E, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -to_pins  -max_paths 100 -nworst 1 -delay_type max -sort_by slack.
+report_timing: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 4151.602 ; gain = 177.598 ; free physical = 378135 ; free virtual = 445331
+# report_timing \
+#     -to $data_pins \
+#     -delay_type min \
+#     -max_paths 100 \
+#     -path_type full_clock_expanded \
+#     -file [file join $reports_dir timing_register_data_hold_final.rpt]
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Temperature grade: E, Delay Type: min.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -to_pins  -max_paths 100 -nworst 1 -delay_type min -sort_by slack.
+# puts "REGISTER_DATA_SETUP_WNS=[get_property SLACK [lindex [get_timing_paths -to $data_pins -delay_type max -max_paths 1] 0]]"
+REGISTER_DATA_SETUP_WNS=-2.986
+# puts "REGISTER_DATA_HOLD_WNS=[get_property SLACK [lindex [get_timing_paths -to $data_pins -delay_type min -max_paths 1] 0]]"
+REGISTER_DATA_HOLD_WNS=-2.749
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Fri Aug 21 07:10:36 2026...

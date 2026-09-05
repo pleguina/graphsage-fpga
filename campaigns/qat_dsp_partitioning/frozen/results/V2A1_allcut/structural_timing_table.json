@@ -1,0 +1,143 @@
+{
+  "audit_csv": "/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_V2A1_allcut_route_default/reports/structural_timing_paths.csv",
+  "negative_paths": 8,
+  "categories": {
+    "aggregation_dsp_input": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    },
+    "dsp_pipeline_output": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    },
+    "fabric_multiplier": {
+      "endpoints": 2,
+      "worst_slack_ns": -0.018,
+      "accumulated_negative_slack_ns": 0.026,
+      "average_routing_fraction": 0.6925,
+      "max_fanout": 50,
+      "average_max_fanout": 50.0,
+      "startpoint_primitives": [
+        "FDRE"
+      ],
+      "endpoint_primitives": [
+        "FDRE"
+      ],
+      "hierarchies": [
+        "top-level or flattened"
+      ]
+    },
+    "adder_carry8_reduction": {
+      "endpoints": 6,
+      "worst_slack_ns": -0.029,
+      "accumulated_negative_slack_ns": 0.071,
+      "average_routing_fraction": 0.8238,
+      "max_fanout": 129,
+      "average_max_fanout": 30.33,
+      "startpoint_primitives": [
+        "FDRE"
+      ],
+      "endpoint_primitives": [
+        "FDRE"
+      ],
+      "hierarchies": [
+        "hidden/L1-to-L2 staging",
+        "output staging",
+        "top-level or flattened"
+      ]
+    },
+    "requantization_shift_clamp": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    },
+    "pipeline_enable_ce_reset": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    },
+    "ordinary_data_register_routing": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    },
+    "output_staging": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    },
+    "other": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    }
+  },
+  "global_wns_path": {
+    "rank": "1",
+    "slack_ns": "-0.029",
+    "datapath_delay_ns": "2.775",
+    "logic_delay_ns": "0.39",
+    "route_delay_ns": "2.385",
+    "logic_levels": "2",
+    "skew_ns": "-0.012",
+    "start_cell": "grp_l1_neighbor_channel_true_12_true_s_fu_6950/neighbor_acc_62_reg_5256_reg[13]",
+    "start_ref": "FDRE",
+    "start_hierarchy": "grp_l1_neighbor_channel_true_12_true_s_fu_6950",
+    "start_slr": "SLR0",
+    "start_loc": "SLICE_X62Y181",
+    "end_cell": "neighbor_output1_86_reg_112022_reg[7]",
+    "end_ref": "FDRE",
+    "end_hierarchy": "NA",
+    "end_slr": "SLR1",
+    "end_loc": "SLICE_X117Y242",
+    "max_fanout": "1",
+    "average_fanout": "1.0",
+    "primitive_chain": "FDRE>CARRY8",
+    "category": "adder_carry8_reduction",
+    "hierarchy_hint": "output staging"
+  }
+}

@@ -1,0 +1,630 @@
+HOST=<COMPUTE_NODE>
+HLS_ACTION=csynth
+
+****** vitis-run v2025.2 (64-bit)
+  **** SW Build 6295257 on 2025-11-13-01:29:13
+  **** Start of session at: Fri Aug 21 13:45:19 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+  **** HLS Build v2025.2 6295257
+Sourcing Tcl script '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/run_graphsage_dynamic_graph_const_weights.tcl'
+HLS_PROJECT_DIR=/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights
+HLS_ACTION=csynth
+HLS_PART=xcvu13p-fsga2577-1-e
+HLS_CLOCK_PERIOD_NS=2.77
+INFO: [HLS 200-1510] Running: open_project -reset /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights 
+WARNING: [HLS 200-2182] The 'graphsage_dynamic_graph_const_weights' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Opening and resetting solution '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights'.
+INFO: [HLS 200-1510] Running: set_top graphsage_dynamic_graph_const_weights 
+INFO: [HLS 200-1510] Running: add_files /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp -cflags -std=c++17 -I/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls -DDSE_TOP_II=1 -DM_BITS=24 -DK_BITS=12 -DADJ_BITS=16 -DACC_BITS=22 -DBETA1_SHIFT=17 -DBETA2_SHIFT=12 -DEFF_SCALE1_SHIFT=6 -DEFF_SCALE2_SHIFT=6 
+INFO: [HLS 200-10] Adding design file '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/testbench_graphsage_dynamic_graph_const_weights.cpp -cflags -std=c++17 -I/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls -DDSE_TOP_II=1 -DM_BITS=24 -DK_BITS=12 -DADJ_BITS=16 -DACC_BITS=22 -DBETA1_SHIFT=17 -DBETA2_SHIFT=12 -DEFF_SCALE1_SHIFT=6 -DEFF_SCALE2_SHIFT=6 
+INFO: [HLS 200-10] Adding test bench file '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/testbench_graphsage_dynamic_graph_const_weights.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu13p-fsga2577-1-e 
+INFO: [HLS 200-1611] Setting target device to 'xcvu13p-fsga2577-1-e'
+INFO: [HLS 200-1510] Running: create_clock -period 2.77 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 2.77ns.
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 1.0 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1ns.
+INFO: [HLS 200-1510] Running: config_op mul -impl dsp -latency 3 
+INFO: [HLS 200-1445] Configure operator 'mul' with implementation style 'dsp'.
+INFO: [HLS 200-1446] Configure operator 'mul' with latency 3.
+INFO: [HLS 200-1510] Running: config_schedule -enable_dsp_full_reg 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.91 seconds. CPU system time: 0.13 seconds. Elapsed time: 1.71 seconds; current allocated memory: 609.863 MB.
+INFO: [HLS 200-2191] C-Synthesis will use clang-16 as the compiler
+INFO: [HLS 200-10] Analyzing design file '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 5.71 seconds. CPU system time: 0.69 seconds. Elapsed time: 7.29 seconds; current allocated memory: 612.293 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 8,231 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+WARNING: [HLS 200-1995] There were 101,154 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 62,126 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 62,126 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 62,126 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 78,624 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 55,573 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 55,757 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 55,405 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 55,053 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 54,277 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 54,268 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 54,398 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 54,075 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 53,215 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 53,218 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-131] Inlining function 'int8_clamp(ap_int<22>)' into 'ap_int<8> normalize_neighbor_sum<17>(ap_int<11>, ap_uint<4>)' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:58:12)
+INFO: [HLS 214-131] Inlining function 'edge_mask_popcount(ap_uint<8>)' into 'void aggregate_dynamic_mean<16, 17>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [16])' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:74:25)
+INFO: [HLS 214-131] Inlining function 'ap_int<8> normalize_neighbor_sum<17>(ap_int<11>, ap_uint<4>)' into 'void aggregate_dynamic_mean<16, 17>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [16])' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:94:17)
+INFO: [HLS 214-131] Inlining function 'select_and_sum_neighbors(ap_int<8> const*, ap_uint<8>)' into 'void aggregate_dynamic_mean<16, 17>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [16])' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:92:17)
+INFO: [HLS 214-131] Inlining function 'int8_clamp(ap_int<22>)' into 'void linear_int8_po2<8, 16, 24>(ap_int<8> const (*) [16], ap_int<8> const (*) [16], ap_int<22> const*, ap_int<8> (*) [24], int)' (hls/graphsage_layer_int8_po2_19c_base.h:346:28)
+INFO: [HLS 214-131] Inlining function 'int8_clamp(ap_int<22>)' into 'ap_int<8> normalize_neighbor_sum<12>(ap_int<11>, ap_uint<4>)' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:58:12)
+INFO: [HLS 214-131] Inlining function 'edge_mask_popcount(ap_uint<8>)' into 'void aggregate_dynamic_mean<24, 12>(ap_int<8> const (*) [24], ap_uint<8> const*, ap_int<8> (*) [24])' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:74:25)
+INFO: [HLS 214-131] Inlining function 'ap_int<8> normalize_neighbor_sum<12>(ap_int<11>, ap_uint<4>)' into 'void aggregate_dynamic_mean<24, 12>(ap_int<8> const (*) [24], ap_uint<8> const*, ap_int<8> (*) [24])' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:94:17)
+INFO: [HLS 214-131] Inlining function 'select_and_sum_neighbors(ap_int<8> const*, ap_uint<8>)' into 'void aggregate_dynamic_mean<24, 12>(ap_int<8> const (*) [24], ap_uint<8> const*, ap_int<8> (*) [24])' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:92:17)
+INFO: [HLS 214-131] Inlining function 'int8_clamp(ap_int<22>)' into 'void linear_int8_po2<8, 24, 7>(ap_int<8> const (*) [24], ap_int<8> const (*) [24], ap_int<22> const*, ap_int<8> (*) [7], int)' (hls/graphsage_layer_int8_po2_19c_base.h:346:28)
+INFO: [HLS 214-131] Inlining function 'void aggregate_dynamic_mean<16, 17>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [16])' into 'void graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [7])' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:121:5)
+INFO: [HLS 214-131] Inlining function 'void linear_int8_po2<8, 24, 7>(ap_int<8> const (*) [24], ap_int<8> const (*) [24], ap_int<22> const*, ap_int<8> (*) [7], int)' into 'void graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [7])' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:126:5)
+INFO: [HLS 214-131] Inlining function 'void aggregate_dynamic_mean<24, 12>(ap_int<8> const (*) [24], ap_uint<8> const*, ap_int<8> (*) [24])' into 'void graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [7])' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:125:5)
+INFO: [HLS 214-131] Inlining function 'void relu_int8<8, 24>(ap_int<8> (*) [24])' into 'void graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [7])' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:124:5)
+INFO: [HLS 214-131] Inlining function 'void linear_int8_po2<8, 16, 24>(ap_int<8> const (*) [16], ap_int<8> const (*) [16], ap_int<22> const*, ap_int<8> (*) [24], int)' into 'void graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [7])' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:122:5)
+INFO: [HLS 214-291] Loop 'REGISTER_OUTPUT_NODE' is marked as complete unroll implied by the pipeline pragma (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:44:5)
+INFO: [HLS 214-291] Loop 'REGISTER_OUTPUT_FEATURE' is marked as complete unroll implied by the pipeline pragma (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:47:9)
+INFO: [HLS 214-291] Loop 'REGISTER_INPUT_NODE' is marked as complete unroll implied by the pipeline pragma (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:29:5)
+INFO: [HLS 214-291] Loop 'REGISTER_INPUT_FEATURE' is marked as complete unroll implied by the pipeline pragma (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:33:9)
+INFO: [HLS 214-291] Loop 'LIN_N' is marked as complete unroll implied by the pipeline pragma (hls/graphsage_layer_int8_po2_19c_base.h:306:5)
+INFO: [HLS 214-291] Loop 'LIN_O' is marked as complete unroll implied by the pipeline pragma (hls/graphsage_layer_int8_po2_19c_base.h:313:9)
+INFO: [HLS 214-291] Loop 'LIN_F' is marked as complete unroll implied by the pipeline pragma (hls/graphsage_layer_int8_po2_19c_base.h:326:13)
+INFO: [HLS 214-291] Loop 'AGG_NODE' is marked as complete unroll implied by the pipeline pragma (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:78:5)
+INFO: [HLS 214-291] Loop 'AGG_FEATURE' is marked as complete unroll implied by the pipeline pragma (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:81:9)
+INFO: [HLS 214-291] Loop 'COPY_FEATURE_COLUMN' is marked as complete unroll implied by the pipeline pragma (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:86:13)
+INFO: [HLS 214-291] Loop 'DEGREE_NODE' is marked as complete unroll implied by the pipeline pragma (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:72:5)
+INFO: [HLS 214-291] Loop 'RELU_N' is marked as complete unroll implied by the pipeline pragma (hls/graphsage_layer_int8_po2_19c_base.h:367:5)
+INFO: [HLS 214-291] Loop 'RELU_F' is marked as complete unroll implied by the pipeline pragma (hls/graphsage_layer_int8_po2_19c_base.h:374:9)
+INFO: [HLS 214-186] Unrolling loop 'REGISTER_OUTPUT_NODE' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:44:5) in function 'graphsage_dynamic_graph_const_weights' completely with a factor of 8 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'REGISTER_OUTPUT_FEATURE' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:47:9) in function 'graphsage_dynamic_graph_const_weights' completely with a factor of 7 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'REGISTER_INPUT_NODE' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:29:5) in function 'graphsage_dynamic_graph_const_weights' completely with a factor of 8 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'REGISTER_INPUT_FEATURE' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:33:9) in function 'graphsage_dynamic_graph_const_weights' completely with a factor of 16 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'LIN_N' (hls/graphsage_layer_int8_po2_19c_base.h:306:5) in function 'graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>' completely with a factor of 8 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:104:0)
+INFO: [HLS 214-186] Unrolling loop 'LIN_O' (hls/graphsage_layer_int8_po2_19c_base.h:313:9) in function 'graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>' completely with a factor of 7 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:104:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'LIN_O' (hls/graphsage_layer_int8_po2_19c_base.h:313:9) in function 'graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>' has been removed because the loop is unrolled completely (hls/graphsage_layer_int8_po2_19c_base.h:319:1)
+INFO: [HLS 214-186] Unrolling loop 'LIN_F' (hls/graphsage_layer_int8_po2_19c_base.h:326:13) in function 'graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>' completely with a factor of 24 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:104:0)
+INFO: [HLS 214-186] Unrolling loop 'AGG_NODE' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:78:5) in function 'graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>' completely with a factor of 8 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:104:0)
+INFO: [HLS 214-186] Unrolling loop 'AGG_FEATURE' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:81:9) in function 'graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>' completely with a factor of 24 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:104:0)
+INFO: [HLS 214-186] Unrolling loop 'COPY_FEATURE_COLUMN' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:86:13) in function 'graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>' completely with a factor of 8 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:104:0)
+INFO: [HLS 214-186] Unrolling loop 'DEGREE_NODE' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:72:5) in function 'graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>' completely with a factor of 8 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:104:0)
+INFO: [HLS 214-186] Unrolling loop 'RELU_N' (hls/graphsage_layer_int8_po2_19c_base.h:367:5) in function 'graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>' completely with a factor of 8 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:104:0)
+INFO: [HLS 214-186] Unrolling loop 'RELU_F' (hls/graphsage_layer_int8_po2_19c_base.h:374:9) in function 'graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>' completely with a factor of 24 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:104:0)
+INFO: [HLS 214-186] Unrolling loop 'LIN_O' (hls/graphsage_layer_int8_po2_19c_base.h:313:9) in function 'graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>' completely with a factor of 24 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:104:0)
+INFO: [HLS 214-186] Unrolling loop 'LIN_F' (hls/graphsage_layer_int8_po2_19c_base.h:326:13) in function 'graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>' completely with a factor of 16 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:104:0)
+INFO: [HLS 214-186] Unrolling loop 'AGG_FEATURE' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:81:9) in function 'graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>' completely with a factor of 16 (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:104:0)
+INFO: [HLS 214-248] Applying array_partition to 'degrees.i169': Complete partitioning on dimension 1. (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:68:14)
+INFO: [HLS 214-248] Applying array_partition to 'degrees.i': Complete partitioning on dimension 1. (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:68:14)
+INFO: [HLS 214-248] Applying array_partition to 'agg1': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:111:12)
+INFO: [HLS 214-248] Applying array_partition to 'hidden': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:112:12)
+INFO: [HLS 214-248] Applying array_partition to 'agg2': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:113:12)
+INFO: [HLS 214-248] Applying array_partition to 'registered_input': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:19:12)
+INFO: [HLS 214-248] Applying array_partition to 'registered_masks': Complete partitioning on dimension 1. (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:20:17)
+INFO: [HLS 214-248] Applying array_partition to 'registered_output': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:21:12)
+INFO: [HLS 214-248] Applying array_partition to 'input': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'edge_masks': Complete partitioning on dimension 1. (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-248] Applying array_partition to 'output': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_7_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_6_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_5_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_4_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_3_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_2_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_1_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'output_0_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_15' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_14' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_13' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_12' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_11' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_10' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_9' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_8' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_7' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_7_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_15' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_14' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_13' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_12' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_11' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_10' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_9' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_8' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_7' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_6_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_15' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_14' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_13' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_12' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_11' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_10' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_9' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_8' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_7' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_5_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_15' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_14' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_13' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_12' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_11' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_10' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_9' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_8' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_7' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_4_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_15' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_14' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_13' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_12' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_11' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_10' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_9' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_8' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_7' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_3_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_15' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_14' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_13' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_12' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_11' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_10' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_9' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_8' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_7' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_2_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_15' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_14' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_13' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_12' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_11' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_10' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_9' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_8' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_7' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_1_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_15' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_14' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_13' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_12' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_11' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_10' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_9' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_8' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_7' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_6' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_5' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_4' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_3' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_2' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_1' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'input_0_0' with compact=bit mode in 8-bits (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:7:0)
+INFO: [HLS 214-364] Automatically inlining function 'void graphsage_dynamic_graph_const_weights_template<8, 16, 24, 7>(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [7])' to improve effectiveness of pipeline pragma in function 'graphsage_dynamic_graph_const_weights(ap_int<8> const (*) [16], ap_uint<8> const*, ap_int<8> (*) [7])' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:39:5)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'DEGREE_SCALE' due to pipeline pragma (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:8:1)
+INFO: [HLS 214-248] Applying array_partition to '_ZL12DEGREE_SCALE': Complete partitioning on dimension 1. (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:12:0)
+WARNING: [HLS 214-358] Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations. (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:52:38)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 50.28 seconds. CPU system time: 0.62 seconds. Elapsed time: 51.88 seconds; current allocated memory: 636.199 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 636.199 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 9.03 seconds. CPU system time: 0.04 seconds. Elapsed time: 9.21 seconds; current allocated memory: 727.375 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 1077.21 seconds. CPU system time: 0.03 seconds. Elapsed time: 1079.9 seconds; current allocated memory: 727.375 MB.
+INFO: [XFORM 203-11] Balancing expressions in function 'graphsage_dynamic_graph_const_weights' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:3:35)...1768 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1114.08 seconds. CPU system time: 1.59 seconds. Elapsed time: 1120.72 seconds; current allocated memory: 865.699 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 26.76 seconds. CPU system time: 0.1 seconds. Elapsed time: 27.08 seconds; current allocated memory: 869.449 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'graphsage_dynamic_graph_const_weights' ...
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (hls/graphsage_layer_int8_po2_19c_base.h:334->hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:122->hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:39): 'return' does not exist or is optimized away.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:54->hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:94->hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:125->hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:39): 'return' does not exist or is optimized away.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'graphsage_dynamic_graph_const_weights' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'graphsage_dynamic_graph_const_weights'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 36, function 'graphsage_dynamic_graph_const_weights'
+WARNING: [HLS 200-871] Estimated clock period (2.301 ns) exceeds the target (target clock period: 2.770 ns, clock uncertainty: 1.000 ns, effective delay budget: 1.770 ns).
+Resolution: For help on HLS 200-871 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'graphsage_dynamic_graph_const_weights' consists of the following:
+	'mul' operation 24 bit ('mul_ln55', hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:55->hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:94->hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.h:121->hls/graphsage_layer_int8_po2_dynamic_graph_const_weights.cpp:39) [982]  (2.301 ns)
+
+Resolution: For help on HLS 200-1016 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 12.96 seconds. CPU system time: 0.09 seconds. Elapsed time: 13.17 seconds; current allocated memory: 970.848 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 5.28 seconds. CPU system time: 0.04 seconds. Elapsed time: 5.62 seconds; current allocated memory: 970.848 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'graphsage_dynamic_graph_const_weights' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_0_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_1_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_2_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_3_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_4_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_5_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_6_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_8' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_9' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_10' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_11' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_12' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_13' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_14' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/input_7_15' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/edge_masks_0' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/edge_masks_1' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/edge_masks_2' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/edge_masks_3' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/edge_masks_4' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/edge_masks_5' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/edge_masks_6' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/edge_masks_7' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_0_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_0_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_0_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_0_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_0_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_0_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_0_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_0_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_1_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_1_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_1_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_1_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_1_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_1_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_1_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_1_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_2_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_2_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_2_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_2_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_2_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_2_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_2_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_2_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_3_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_3_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_3_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_3_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_3_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_3_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_3_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_3_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_4_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_4_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_4_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_4_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_4_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_4_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_4_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_4_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_5_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_5_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_5_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_5_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_5_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_5_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_5_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_5_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_6_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_6_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_6_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_6_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_6_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_6_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_6_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_6_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_7_0' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_0' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_7_1' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_1' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_7_2' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_2' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_7_3' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_3' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_7_4' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_4' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_7_5' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_5' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'graphsage_dynamic_graph_const_weights/output_7_6' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'output_7_6' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on function 'graphsage_dynamic_graph_const_weights' to 'ap_ctrl_none'.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'graphsage_dynamic_graph_const_weights' pipeline 'graphsage_dynamic_graph_const_weights' pipeline type 'function pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'graphsage_dynamic_graph_const_weights' is 65696 from HDL expression: ((1'b0 == ap_block_pp0_stage0_subdone_grp0_done_reg) & (1'b0 == ap_block_pp0_stage0_11001_grp0))
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_7ns_16s_16_4_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_13ns_10ns_23_4_1': 64 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_13ns_11s_24_4_1': 128 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_3s_9_4_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_4ns_10_4_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_4s_10_4_1': 24 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_5ns_11_4_1': 40 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_5s_11_4_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_6ns_12_4_1': 24 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_6s_12_4_1': 64 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_7ns_13_4_1': 208 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_7s_13_4_1': 120 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_8ns_14_4_1': 216 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6s_8s_14_4_1': 120 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_2s_10_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_5ns_13_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_5s_13_4_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_6ns_14_4_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_6s_14_4_1': 48 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_7ns_15_4_1': 120 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_7s_15_4_1': 56 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_8ns_16_4_1': 192 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_8s_16_4_1': 280 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_19_4_13_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'graphsage_dynamic_graph_const_weights'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 7.52 seconds. CPU system time: 0.13 seconds. Elapsed time: 8.92 seconds; current allocated memory: 1.076 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 18.31 seconds. CPU system time: 0.67 seconds. Elapsed time: 22.12 seconds; current allocated memory: 1.363 GB.
+INFO: [HLS 200-2225] Wrote inferred directives to file /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/graphsage_dynamic_graph_const_weights/solution1/syn/inferred_directives.ini
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 2.95 seconds. CPU system time: 0.1 seconds. Elapsed time: 3.18 seconds; current allocated memory: 1.448 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for graphsage_dynamic_graph_const_weights.
+INFO: [VLOG 209-307] Generating Verilog RTL for graphsage_dynamic_graph_const_weights.
+INFO: [HLS 200-789] **** Estimated Fmax: 434.64 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:39:10; Allocated memory: 873.199 MB.
+HLS_DYNAMIC_GRAPH_FLOW_COMPLETE=1
+INFO: [HLS 200-1510] Running: close_project 
+INFO: [HLS 200-112] Total CPU user time: 2334.05 seconds. Total CPU system time: 5.29 seconds. Total elapsed time: 2359.19 seconds; peak allocated memory: 1.448 GB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 39m 21s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

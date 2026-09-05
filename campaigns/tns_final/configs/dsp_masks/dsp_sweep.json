@@ -1,0 +1,11 @@
+{
+  "description": "DSP/fabric physical-configuration sweep (Section 6). All entries hold pipeline masks at their historical values (0 until V2A1_allcut) and use the common Default/Default physical flow except Final, which uses the validated SSI_SpreadLogic_high + retime strategy.",
+  "variants": {
+    "V1":    {"masks": {"L1_NEIGHBOR_MASK": "0x1000"}, "hls_dsp": 440, "run_dir": "build/vivado_sweep/qat_dsp_V1_route_default", "status": "existing"},
+    "V2":    {"masks": {"L1_NEIGHBOR_MASK": "0x1004"}, "hls_dsp": 552, "run_dir": "build/vivado_sweep/qat_dsp_V2_route_default", "status": "existing"},
+    "V3":    {"masks": {"L1_NEIGHBOR_MASK": "0x1004", "L2_NEIGHBOR_MASK": "0x8"}, "hls_dsp": 720, "run_dir": "build/vivado_sweep/qat_dsp_V3_route_default", "status": "existing"},
+    "V4":    {"masks": {"L1_NEIGHBOR_MASK": "0x1004", "L2_NEIGHBOR_MASK": "0x28"}, "hls_dsp": 888, "run_dir": "build/vivado_sweep/qat_dsp_V4_route_default", "status": "existing"},
+    "V2A1":  {"masks": {"L1_NEIGHBOR_MASK": "0x1004", "AGGREGATION_MODE": 4}, "hls_dsp": 552, "run_dir": "build/vivado_sweep/qat_dsp_V2A1_route_default", "status": "existing"},
+    "Final": {"masks": {"L1_NEIGHBOR_MASK": "0x1004", "AGGREGATION_MODE": 4, "L1_ROOT_ACC_PIPELINE_MASK": "0xFFFFFF", "L1_NEIGHBOR_ACC_PIPELINE_MASK": "0xFFFFFF", "L2_ROOT_ACC_PIPELINE_MASK": "0x7F", "L2_NEIGHBOR_ACC_PIPELINE_MASK": "0x7F"}, "hls_dsp": 552, "run_dir": "build/vivado_sweep/qat_dsp_V2A1_allcut_ssi_retime_route", "status": "existing (final strategy)"}
+  }
+}

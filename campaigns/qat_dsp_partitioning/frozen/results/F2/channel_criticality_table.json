@@ -1,0 +1,284 @@
+{
+  "audit_csv": "/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_F2_route_default/reports/channel_criticality_paths.csv",
+  "total_paths_in_sample": 1000,
+  "global_sample_wns_ns": -0.165,
+  "global_sample_wns_owner": null,
+  "unclassified_paths": 23,
+  "unclassified_categories": {
+    "aggregation_dsp_input": {
+      "paths": 1,
+      "unique_end_cells": 1,
+      "accumulated_negative_slack_ns": 0.006,
+      "worst_slack_ns": -0.006,
+      "examples": [
+        {
+          "slack_ns": -0.006,
+          "start_cell": "grp_l1_neighbor_channel_false_22_false_s_fu_8090/aggregate_input_2_13_val_read_reg_3881_reg[4]",
+          "end_cell": "grp_l1_neighbor_channel_false_8_true_s_fu_6554/mul_8s_7s_15_4_0_U6597/buff0_reg[13]"
+        }
+      ]
+    },
+    "control_enable": {
+      "paths": 0,
+      "unique_end_cells": 0,
+      "accumulated_negative_slack_ns": 0.0,
+      "worst_slack_ns": 0.0,
+      "examples": []
+    },
+    "adder_saturation_quantization": {
+      "paths": 0,
+      "unique_end_cells": 0,
+      "accumulated_negative_slack_ns": 0.0,
+      "worst_slack_ns": 0.0,
+      "examples": []
+    },
+    "pipeline_registers": {
+      "paths": 9,
+      "unique_end_cells": 9,
+      "accumulated_negative_slack_ns": 0.129,
+      "worst_slack_ns": -0.028,
+      "examples": [
+        {
+          "slack_ns": -0.028,
+          "start_cell": "tmp_180_reg_97198_pp0_iter24_reg_reg[0]__0_rep__0",
+          "end_cell": "half0_160_reg_117082_reg[8]"
+        },
+        {
+          "slack_ns": -0.021,
+          "start_cell": "hidden_264_reg_114743_pp0_iter24_reg_reg[1]__0",
+          "end_cell": "half1_161_reg_117097_reg[7]"
+        },
+        {
+          "slack_ns": -0.018,
+          "start_cell": "hidden_264_reg_114743_pp0_iter24_reg_reg[1]__0",
+          "end_cell": "half1_161_reg_117097_reg[5]"
+        },
+        {
+          "slack_ns": -0.016,
+          "start_cell": "hidden_264_reg_114743_pp0_iter24_reg_reg[1]__0",
+          "end_cell": "half1_224_reg_117727_reg[7]"
+        },
+        {
+          "slack_ns": -0.013,
+          "start_cell": "hidden_264_reg_114743_pp0_iter24_reg_reg[1]__0",
+          "end_cell": "half1_224_reg_117727_reg[5]"
+        }
+      ]
+    },
+    "unknown": {
+      "paths": 13,
+      "unique_end_cells": 13,
+      "accumulated_negative_slack_ns": 0.506,
+      "worst_slack_ns": -0.165,
+      "examples": [
+        {
+          "slack_ns": -0.165,
+          "start_cell": "grp_l1_neighbor_channel_false_22_false_s_fu_8090/mul_8s_7s_15_4_0_U9427/din0_reg_reg[6]",
+          "end_cell": "grp_l1_neighbor_channel_false_19_false_s_fu_7834/mul_8s_6ns_14_4_0_U8949/buff0_reg[13]"
+        },
+        {
+          "slack_ns": -0.139,
+          "start_cell": "grp_l1_neighbor_channel_false_22_false_s_fu_8090/mul_8s_7s_15_4_0_U9427/din0_reg_reg[6]",
+          "end_cell": "grp_l1_neighbor_channel_false_19_false_s_fu_7834/mul_8s_6ns_14_4_0_U8949/buff0_reg[12]"
+        },
+        {
+          "slack_ns": -0.036,
+          "start_cell": "grp_l1_neighbor_channel_false_22_false_s_fu_8090/mul_8s_8s_16_4_0_U9441/din0_reg_reg[2]",
+          "end_cell": "grp_l1_neighbor_channel_false_14_false_s_fu_7206/mul_8s_8ns_16_4_0_U7832/buff0_reg[15]"
+        },
+        {
+          "slack_ns": -0.028,
+          "start_cell": "grp_l1_neighbor_channel_false_22_false_s_fu_8090/mul_8s_8s_16_4_0_U9441/din0_reg_reg[2]",
+          "end_cell": "grp_l1_neighbor_channel_false_14_false_s_fu_7206/mul_8s_8ns_16_4_0_U7832/buff0_reg[13]"
+        },
+        {
+          "slack_ns": -0.028,
+          "start_cell": "grp_l1_neighbor_channel_false_22_false_s_fu_8090/mul_8s_6s_14_4_0_U9451/din0_reg_reg[1]",
+          "end_cell": "grp_l1_neighbor_channel_false_0_false_s_fu_5694/mul_8s_7s_15_4_0_U4957/buff0_reg[13]"
+        }
+      ]
+    }
+  },
+  "groups": [
+    {
+      "layer": 1,
+      "branch": "root",
+      "channel": 7,
+      "endpoints": 10,
+      "worst_slack_ns": -0.069,
+      "accumulated_negative_slack_ns": 0.351,
+      "dsp_analytical": 120,
+      "ranking_tns_per_dsp": 0.0029,
+      "ranking_wns_per_dsp": 0.0006,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 1,
+      "branch": "root",
+      "channel": 0,
+      "endpoints": 3,
+      "worst_slack_ns": -0.057,
+      "accumulated_negative_slack_ns": 0.135,
+      "dsp_analytical": 112,
+      "ranking_tns_per_dsp": 0.0012,
+      "ranking_wns_per_dsp": 0.0005,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 1,
+      "branch": "root",
+      "channel": 22,
+      "endpoints": 3,
+      "worst_slack_ns": -0.052,
+      "accumulated_negative_slack_ns": 0.12,
+      "dsp_analytical": 120,
+      "ranking_tns_per_dsp": 0.001,
+      "ranking_wns_per_dsp": 0.0004,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 2,
+      "branch": "neighbor",
+      "channel": 1,
+      "endpoints": 3,
+      "worst_slack_ns": -0.051,
+      "accumulated_negative_slack_ns": 0.117,
+      "dsp_analytical": 144,
+      "ranking_tns_per_dsp": 0.0008,
+      "ranking_wns_per_dsp": 0.0004,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 1,
+      "branch": "root",
+      "channel": 20,
+      "endpoints": 4,
+      "worst_slack_ns": -0.04,
+      "accumulated_negative_slack_ns": 0.092,
+      "dsp_analytical": 120,
+      "ranking_tns_per_dsp": 0.0008,
+      "ranking_wns_per_dsp": 0.0003,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 1,
+      "branch": "root",
+      "channel": 13,
+      "endpoints": 3,
+      "worst_slack_ns": -0.032,
+      "accumulated_negative_slack_ns": 0.076,
+      "dsp_analytical": 120,
+      "ranking_tns_per_dsp": 0.0006,
+      "ranking_wns_per_dsp": 0.0003,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 1,
+      "branch": "root",
+      "channel": 17,
+      "endpoints": 1,
+      "worst_slack_ns": -0.046,
+      "accumulated_negative_slack_ns": 0.046,
+      "dsp_analytical": 128,
+      "ranking_tns_per_dsp": 0.0004,
+      "ranking_wns_per_dsp": 0.0004,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 1,
+      "branch": "root",
+      "channel": 2,
+      "endpoints": 2,
+      "worst_slack_ns": -0.035,
+      "accumulated_negative_slack_ns": 0.044,
+      "dsp_analytical": 120,
+      "ranking_tns_per_dsp": 0.0004,
+      "ranking_wns_per_dsp": 0.0003,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 1,
+      "branch": "root",
+      "channel": 11,
+      "endpoints": 2,
+      "worst_slack_ns": -0.029,
+      "accumulated_negative_slack_ns": 0.043,
+      "dsp_analytical": 120,
+      "ranking_tns_per_dsp": 0.0004,
+      "ranking_wns_per_dsp": 0.0002,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 2,
+      "branch": "neighbor",
+      "channel": 5,
+      "endpoints": 3,
+      "worst_slack_ns": -0.027,
+      "accumulated_negative_slack_ns": 0.061,
+      "dsp_analytical": 168,
+      "ranking_tns_per_dsp": 0.0004,
+      "ranking_wns_per_dsp": 0.0002,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 1,
+      "branch": "root",
+      "channel": 19,
+      "endpoints": 3,
+      "worst_slack_ns": -0.024,
+      "accumulated_negative_slack_ns": 0.046,
+      "dsp_analytical": 112,
+      "ranking_tns_per_dsp": 0.0004,
+      "ranking_wns_per_dsp": 0.0002,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 1,
+      "branch": "root",
+      "channel": 18,
+      "endpoints": 1,
+      "worst_slack_ns": -0.035,
+      "accumulated_negative_slack_ns": 0.035,
+      "dsp_analytical": 120,
+      "ranking_tns_per_dsp": 0.0003,
+      "ranking_wns_per_dsp": 0.0003,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 1,
+      "branch": "root",
+      "channel": 3,
+      "endpoints": 2,
+      "worst_slack_ns": -0.021,
+      "accumulated_negative_slack_ns": 0.032,
+      "dsp_analytical": 120,
+      "ranking_tns_per_dsp": 0.0003,
+      "ranking_wns_per_dsp": 0.0002,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 1,
+      "branch": "root",
+      "channel": 23,
+      "endpoints": 2,
+      "worst_slack_ns": -0.018,
+      "accumulated_negative_slack_ns": 0.028,
+      "dsp_analytical": 120,
+      "ranking_tns_per_dsp": 0.0002,
+      "ranking_wns_per_dsp": 0.0001,
+      "contains_global_wns": false
+    },
+    {
+      "layer": 1,
+      "branch": "root",
+      "channel": 5,
+      "endpoints": 1,
+      "worst_slack_ns": -0.003,
+      "accumulated_negative_slack_ns": 0.003,
+      "dsp_analytical": 120,
+      "ranking_tns_per_dsp": 0.0,
+      "ranking_wns_per_dsp": 0.0,
+      "contains_global_wns": false
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "baseline_po2_ptq": {
+    "hls": {
+      "available": true,
+      "latency_cycles": "38",
+      "ii": "1",
+      "estimated_period_ns": "2.770",
+      "dsp": "296",
+      "ff": "267060",
+      "lut": "658896",
+      "bram_18k": "0"
+    },
+    "vivado_metadata": {
+      "run_name": "updated_root_low_dsp_route_default",
+      "place_directive": "Default",
+      "route_directive": "Default",
+      "screen_only": "0",
+      "tns_cleanup": "1",
+      "postroute_physopt": "1",
+      "post_place_phys_directive": "",
+      "clock_period_ns": "2.77",
+      "post_stage_setup_wns_ns": "-1.886",
+      "post_stage_hold_wns_ns": "-3.237",
+      "runtime_seconds": "5154",
+      "status": "timing_failed"
+    },
+    "timing_final": {
+      "available": true,
+      "parsed": true,
+      "wns_ns": "-1.886",
+      "tns_ns": "-6175.762",
+      "failing_endpoints": "22389",
+      "whs_ns": "-3.237"
+    },
+    "utilization_final": {
+      "available": true,
+      "lut": "263467",
+      "ff": "364400",
+      "dsp": "296",
+      "bram_tiles": "0",
+      "uram": "0"
+    },
+    "route_status": {
+      "available": true,
+      "unrouted_nets": null,
+      "partially_routed_nets": null
+    },
+    "final_checkpoint": true
+  },
+  "qat_po2": {
+    "hls": {
+      "available": true,
+      "latency_cycles": "36",
+      "ii": "1",
+      "estimated_period_ns": "2.770",
+      "dsp": "306",
+      "ff": "268763",
+      "lut": "665990",
+      "bram_18k": "0"
+    },
+    "vivado_metadata": {
+      "run_name": "updated_qat_po2_low_dsp_route_default",
+      "place_directive": "Default",
+      "route_directive": "Default",
+      "screen_only": "0",
+      "tns_cleanup": "1",
+      "postroute_physopt": "1",
+      "post_place_phys_directive": "",
+      "clock_period_ns": "2.77",
+      "post_stage_setup_wns_ns": "-1.796",
+      "post_stage_hold_wns_ns": "-3.400",
+      "runtime_seconds": "5140",
+      "status": "timing_failed"
+    },
+    "timing_final": {
+      "available": true,
+      "parsed": true,
+      "wns_ns": "-1.796",
+      "tns_ns": "-7208.756",
+      "failing_endpoints": "25232",
+      "whs_ns": "-3.400"
+    },
+    "utilization_final": {
+      "available": true,
+      "lut": "263840",
+      "ff": "372988",
+      "dsp": "306",
+      "bram_tiles": "0",
+      "uram": "0"
+    },
+    "route_status": {
+      "available": true,
+      "unrouted_nets": null,
+      "partially_routed_nets": null
+    },
+    "final_checkpoint": true
+  }
+}
+UPDATED_ROOT_COMPARISON=/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/updated_root_po2_comparison.json

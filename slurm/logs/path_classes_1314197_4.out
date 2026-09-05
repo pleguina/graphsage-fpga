@@ -1,0 +1,84 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Tue Aug 18 19:44:50 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source hls/report_vivado_post_place_path_classes.tcl
+# foreach required_env {RUN_NAME} {
+#     if {![info exists ::env($required_env)] || $::env($required_env) eq ""} {
+#         error "Missing required environment variable $required_env"
+#     }
+# }
+# set script_dir [file dirname [file normalize [info script]]]
+# set repo_root [file normalize [file join $script_dir ..]]
+# set run_dir [file join $repo_root build vivado_sweep $::env(RUN_NAME)]
+# set checkpoint [file join $run_dir post_place.dcp]
+# set reports_dir [file join $run_dir reports]
+# if {![file exists $checkpoint]} {
+#     error "Missing post-place checkpoint: $checkpoint"
+# }
+# file mkdir $reports_dir
+# set vivado_threads [expr {[info exists ::env(SLURM_CPUS_PER_TASK)] ? $::env(SLURM_CPUS_PER_TASK) : 8}]
+# set_param general.maxThreads $vivado_threads
+# proc path_wns {from_objects to_objects delay_type} {
+#     if {[llength $from_objects] == 0 || [llength $to_objects] == 0} {
+#         return "NA"
+#     }
+# 
+#     set paths [get_timing_paths \
+#         -from $from_objects \
+#         -to $to_objects \
+#         -delay_type $delay_type \
+#         -max_paths 100 \
+#         -quiet]
+# 
+#     if {[llength $paths] == 0} {
+#         return "NA"
+#     }
+# 
+#     return [get_property SLACK [lindex $paths 0]]
+# }
+# proc write_path_report {path from_objects to_objects delay_type} {
+#     if {[llength $from_objects] == 0 || [llength $to_objects] == 0} {
+#         set output [open $path w]
+#         puts $output "No objects found for this path class."
+#         close $output
+#         return
+#     }
+# 
+#     report_timing \
+#         -from $from_objects \
+#         -to $to_objects \
+#         -delay_type $delay_type \
+#         -max_paths 100 \
+#         -path_type full_clock_expanded \
+#         -file $path
+# }
+# open_checkpoint $checkpoint
+Command: open_checkpoint /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/screen_ssi_spread_high/post_place.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1473.918 ; gain = 7.938 ; free physical = 243354 ; free virtual = 253785
+INFO: [Device 21-403] Loading part xcvu13p-fsga2577-1-e
+Netlist sorting complete. Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3857.184 ; gain = 24.031 ; free physical = 240713 ; free virtual = 251429
+INFO: [Netlist 29-17] Analyzing 37864 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 24 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 5231.168 ; gain = 137.266 ; free physical = 239324 ; free virtual = 250060
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-5170] The checkpoint was created with non-default parameter values which do not match the current Vivado settings.  Mismatching parameters are:
+  general.maxThreads
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 8913.383 ; gain = 0.000 ; free physical = 235714 ; free virtual = 246470
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 8913.383 ; gain = 0.000 ; free physical = 235714 ; free virtual = 246470

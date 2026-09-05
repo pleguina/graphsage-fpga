@@ -1,0 +1,8 @@
+{
+  "description": "Model-seed robustness (Section 9). Three independently trained QAT-PO2 weight sets (seeds 42/43/44), same 8/16/24/7 architecture, routed with the frozen final HLS architecture (A4/Final masks) and the validated SSI_SpreadLogic_high + retime physical strategy. This is the 'common mask, unmodified' variant: no per-seed guided DSP/pipeline remap was performed (Section 9.1 steps 6-7 were skipped) -- it tests whether the nominal-model configuration transfers as-is, not whether a re-derived mapping is required per seed.",
+  "variants": {
+    "S0": {"label": "Seed 42", "model_seed": 42, "run_dir": "build/vivado_sweep/qat_dsp_seed42_common_ssi_retime_route", "status": "existing"},
+    "S1": {"label": "Seed 43", "model_seed": 43, "run_dir": "build/vivado_sweep/qat_dsp_seed43_common_ssi_retime_route", "status": "existing"},
+    "S2": {"label": "Seed 44", "model_seed": 44, "run_dir": "build/vivado_sweep/qat_dsp_seed44_common_ssi_retime_route", "status": "existing"}
+  }
+}

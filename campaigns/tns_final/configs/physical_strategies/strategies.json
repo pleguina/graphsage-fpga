@@ -1,0 +1,10 @@
+{
+  "description": "Physical-strategy robustness (Section 10). Same frozen A4 RTL (qat_dsp_V2A1_allcut_post_synth.dcp) for every entry; only the Vivado place/route/phys_opt/retime strategy changes.",
+  "input_checkpoint": "build/vivado_sweep/qat_dsp_V2A1_allcut_post_synth.dcp",
+  "variants": {
+    "R0": {"label": "Default placement + normal route, no retime", "place_directive": "Default", "route_directive": "Default", "use_retime": 0, "run_dir": "build/vivado_sweep/qat_dsp_V2A1_allcut_route_default", "status": "existing"},
+    "R1": {"label": "Final validated SSI_SpreadLogic_high flow + retime", "place_directive": "SSI_SpreadLogic_high", "route_directive": "Default", "use_retime": 1, "run_dir": "build/vivado_sweep/qat_dsp_V2A1_allcut_ssi_retime_route", "status": "existing"},
+    "R2": {"label": "AltSpreadLogic_high + retime", "place_directive": "AltSpreadLogic_high", "route_directive": "Default", "use_retime": 1, "run_dir": "build/vivado_sweep/qat_dsp_V2A1_allcut_altspread_retime_route", "status": "new - submitted this session"},
+    "R3": {"label": "SSI_BalanceSLRs + retime", "place_directive": "SSI_BalanceSLRs", "route_directive": "Default", "use_retime": 1, "run_dir": "build/vivado_sweep/qat_dsp_V2A1_allcut_ssibalance_retime_route", "status": "new - submitted this session"}
+  }
+}

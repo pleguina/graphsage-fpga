@@ -1,0 +1,114 @@
+HOST=<COMPUTE_NODE>
+HLS_ACTION=csim
+{
+  "model": "ReducedGraphSAGE root_weight=True",
+  "quantization": "symmetric INT8 activations/weights, INT32 bias, PO2 branch requantization",
+  "input_is_projected": true,
+  "degree_scale": [
+    0,
+    4096,
+    2048,
+    1365,
+    1024,
+    819,
+    683,
+    585,
+    512
+  ],
+  "activation_scales": {
+    "input": 0.003228925346456693,
+    "aggregate1": 0.0025039467716535435,
+    "hidden": 0.009789892992125985,
+    "aggregate2": 0.008510817648388508,
+    "output": 0.0752567231496063
+  },
+  "po2_shifts": {
+    "aggregate1": 12,
+    "aggregate2": 12,
+    "layer1_neighbor": 9,
+    "layer1_root": 9,
+    "layer2_neighbor": 10,
+    "layer2_root": 10
+  },
+  "historical_float_comparison": {
+    "max_abs_logit_error": 3.0102689259842528,
+    "prediction_matches": 7,
+    "total_nodes": 8,
+    "integer_predictions": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "float_predictions": [
+      3,
+      3,
+      3,
+      2,
+      3,
+      3,
+      3,
+      3
+    ]
+  },
+  "tests": [
+    "historical_cora",
+    "degree1_ring",
+    "degree_sweep_1_to_8",
+    "dense_with_self",
+    "mixed_including_degree0"
+  ]
+}
+
+****** vitis-run v2025.2 (64-bit)
+  **** SW Build 6295257 on 2025-11-13-01:29:13
+  **** Start of session at: Fri Aug 21 19:03:51 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+  **** HLS Build v2025.2 6295257
+Sourcing Tcl script '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights/run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/cora_root_dynamic_const_weights 
+WARNING: [HLS 200-2182] The 'cora_root_dynamic_const_weights' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Creating and opening solution '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/cora_root_dynamic_const_weights'.
+INFO: [HLS 200-1510] Running: set_top graphsage_root_dynamic_const_weights 
+INFO: [HLS 200-1510] Running: add_files /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights/graphsage_root_dynamic_const_weights.cpp -cflags -std=c++17 -I/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights 
+INFO: [HLS 200-10] Adding design file '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights/graphsage_root_dynamic_const_weights.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights/testbench_root_dynamic_const_weights.cpp -cflags -std=c++17 -I/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights 
+INFO: [HLS 200-10] Adding test bench file '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights/testbench_root_dynamic_const_weights.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution '/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/hls/cora_root_dynamic_const_weights/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu13p-fsga2577-1-e 
+INFO: [HLS 200-1611] Setting target device to 'xcvu13p-fsga2577-1-e'
+INFO: [HLS 200-1510] Running: create_clock -period 2.77 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 2.77ns.
+INFO: [HLS 200-1510] Running: set_clock_uncertainty 1.0 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1ns.
+INFO: [HLS 200-1510] Running: config_op mul -impl dsp -latency 3 
+INFO: [HLS 200-1445] Configure operator 'mul' with implementation style 'dsp'.
+INFO: [HLS 200-1446] Configure operator 'mul' with latency 3.
+INFO: [HLS 200-1510] Running: config_schedule -enable_dsp_full_reg 
+INFO: [HLS 200-1510] Running: csim_design -clean 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [HLS 200-2191] C-Simulation will use clang-16 as the compiler
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../../../hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights/testbench_root_dynamic_const_weights.cpp in debug mode
+   Compiling ../../../../../../hls/cora_graphsage_hls_test_bundle/build/cora_hls_bundle/hls/root_dynamic_const_weights/graphsage_root_dynamic_const_weights.cpp in debug mode
+   Generating csim.exe
+ROOT_DYNAMIC_BIT_EXACT_PASS graphs=5 values=280
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:08; Allocated memory: 0.000 MB.
+ROOT_DYNAMIC_HLS_COMPLETE=1
+INFO: [HLS 200-1510] Running: close_project 
+INFO: [HLS 200-112] Total CPU user time: 6.1 seconds. Total CPU system time: 1.4 seconds. Total elapsed time: 16.81 seconds; peak allocated memory: 609.867 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 18s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

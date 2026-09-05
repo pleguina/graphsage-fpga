@@ -1,0 +1,31 @@
+List of CLB Tiles
+CLEM_X68Y501
+CLEL_R_X68Y501
+CLEM_X75Y876
+CLEL_R_X75Y876
+CLEM_X62Y560
+CLEM_X59Y521
+CLEM_X59Y532
+CLEL_R_X135Y662
+CLEM_X116Y627
+CLEL_R_X116Y627
+CLEM_X92Y661
+CLEL_R_X71Y536
+CLEM_X70Y566
+CLEL_R_X70Y566
+
+List of Congested Nets
+grp_l1_root_channel_false_10_true_s_fu_3198/root_product_3827_reg_5550[9]
+grp_l1_root_channel_false_10_true_s_fu_3198/add_ln88_1048_reg_5565[10]
+mul_8s_8ns_16_4_0_U8992/buff0_reg[15]_i_11_n_11
+grp_l1_neighbor_channel_false_16_true_s_fu_7462/mul_8s_3ns_11_4_0_U8543/din0_reg_reg[3]_10[6]
+tmp_274_reg_98522_pp0_iter25_reg_reg[0]__0_rep__0_n_0
+half1_213_reg_118513[8]_i_5_n_0
+half1_213_reg_118513[8]_i_23_n_0
+tmp_276_reg_98574_pp0_iter25_reg_reg[0]__0_rep__0_n_0
+half1_230_reg_118683[8]_i_18_n_0
+half1_230_reg_118683[8]_i_19_n_0
+half0_241_reg_118788[8]_i_6_n_0
+half0_241_reg_118788[8]_i_27_n_0
+half0_241_reg_118788[8]_i_20_n_0
+

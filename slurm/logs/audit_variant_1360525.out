@@ -1,0 +1,134 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Mon Aug 24 16:21:29 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source campaigns/qat_dsp_partitioning/hls/audit_channel_criticality.tcl
+# if {$argc != 2} {
+#     error "Usage: vivado -mode batch -source audit_channel_criticality.tcl -tclargs <checkpoint> <output.csv>"
+# }
+# set checkpoint [lindex $argv 0]
+# set output_csv [lindex $argv 1]
+# open_checkpoint $checkpoint
+Command: open_checkpoint /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_V2A1_route_default/final.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1508.473 ; gain = 0.000 ; free physical = 187499 ; free virtual = 252178
+INFO: [Device 21-403] Loading part xcvu13p-fsga2577-1-e
+Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3659.738 ; gain = 24.000 ; free physical = 185387 ; free virtual = 250068
+INFO: [Netlist 29-17] Analyzing 48416 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.48 . Memory (MB): peak = 4043.059 ; gain = 24.422 ; free physical = 185010 ; free virtual = 249691
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-5170] The checkpoint was created with non-default parameter values which do not match the current Vivado settings.  Mismatching parameters are:
+  general.maxThreads
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.88 ; elapsed = 00:00:00.88 . Memory (MB): peak = 5716.352 ; gain = 0.000 ; free physical = 183412 ; free virtual = 248093
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5716.352 ; gain = 0.000 ; free physical = 183412 ; free virtual = 248093
+Read PlaceDB: Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 6240.641 ; gain = 524.289 ; free physical = 182898 ; free virtual = 247579
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6240.641 ; gain = 0.000 ; free physical = 182898 ; free virtual = 247579
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 6537.664 ; gain = 297.023 ; free physical = 182597 ; free virtual = 247278
+Read Physdb Files: Time (s): cpu = 00:00:34 ; elapsed = 00:00:24 . Memory (MB): peak = 6537.664 ; gain = 821.312 ; free physical = 182597 ; free virtual = 247278
+Restored from archive | CPU: 34.620000 secs | Memory: 728.315842 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:34 ; elapsed = 00:00:24 . Memory (MB): peak = 6537.664 ; gain = 821.312 ; free physical = 182597 ; free virtual = 247278
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 6537.664 ; gain = 0.000 ; free physical = 182597 ; free virtual = 247278
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 440 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 440 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:02:18 ; elapsed = 00:02:11 . Memory (MB): peak = 6537.699 ; gain = 5029.227 ; free physical = 182598 ; free virtual = 247279
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'to' option of 'get_timing_paths' is very large: 407553. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'from' option of 'get_timing_paths' is very large: 407553. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ap_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+get_timing_paths: Time (s): cpu = 00:05:02 ; elapsed = 00:01:03 . Memory (MB): peak = 7307.039 ; gain = 769.340 ; free physical = 181820 ; free virtual = 246501
+# set paths [get_timing_paths \
+#     -from [all_registers] \
+#     -to [all_registers] \
+#     -delay_type max \
+#     -max_paths 1000 \
+#     -unique_pins \
+#     -nworst 1]
+# file mkdir [file dirname $output_csv]
+# set output [open $output_csv w]
+# puts $output "rank,slack_ns,start_cell,end_cell"
+# set rank 0
+# foreach path $paths {
+#     incr rank
+#     set start_pin [get_property STARTPOINT_PIN $path]
+#     set end_pin [get_property ENDPOINT_PIN $path]
+#     set start_cell [get_cells -quiet -of_objects $start_pin]
+#     set end_cell [get_cells -quiet -of_objects $end_pin]
+#     puts $output [join [list \
+#         $rank \
+#         [get_property SLACK $path] \
+#         $start_cell \
+#         $end_cell] ","]
+# }
+# close $output
+# puts "L2_CHANNEL_AUDIT=$output_csv"
+L2_CHANNEL_AUDIT=/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_V2A1_route_default/reports/channel_criticality_paths.csv
+# puts "L2_CHANNEL_AUDIT_COUNT=$rank"
+L2_CHANNEL_AUDIT_COUNT=1000
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Mon Aug 24 16:24:49 2026...
+layer  branch    ch  endpoints   worst_ns     TNS_ns  dsp_est    TNS/DSP    WNS/DSP  global
+1      neighbor   0         11     -0.083      0.497      120     0.0041     0.0007   False
+1      neighbor   8          9     -0.098      0.428      128     0.0033     0.0008    True
+1      neighbor  10          4     -0.090      0.300      120     0.0025     0.0008   False
+1      neighbor  14          9     -0.069      0.289      120     0.0024     0.0006   False
+1      neighbor  13          5     -0.092      0.262      120     0.0022     0.0008   False
+1      neighbor  22          6     -0.089      0.248      120     0.0021     0.0007   False
+1      neighbor  19          7     -0.067      0.257      120     0.0021     0.0006   False
+1      root       8          8     -0.086      0.254      128     0.0020     0.0007   False
+1      neighbor  20          7     -0.055      0.203      120     0.0017     0.0005   False
+1      neighbor   4          5     -0.050      0.154      120     0.0013     0.0004   False
+1      neighbor  17          4     -0.065      0.154      128     0.0012     0.0005   False
+1      root      23          3     -0.058      0.138      120     0.0012     0.0005   False
+1      neighbor  16          3     -0.039      0.069       72     0.0010     0.0005   False
+1      neighbor  15          6     -0.035      0.116      120     0.0010     0.0003   False
+1      neighbor   5          3     -0.061      0.079      120     0.0007     0.0005   False
+1      neighbor   3          3     -0.031      0.067      112     0.0006     0.0003   False
+1      root       7          6     -0.022      0.074      120     0.0006     0.0002   False
+2      neighbor   5          3     -0.067      0.091      168     0.0005     0.0004   False
+1      neighbor  18          3     -0.028      0.054      120     0.0005     0.0002   False
+1      root      11          3     -0.028      0.058      120     0.0005     0.0002   False
+1      root       2          5     -0.022      0.060      120     0.0005     0.0002   False
+1      root       0          1     -0.043      0.043      112     0.0004     0.0004   False
+2      root       5          1     -0.052      0.052      168     0.0003     0.0003   False
+1      neighbor   7          2     -0.023      0.036      120     0.0003     0.0002   False
+1      root      14          2     -0.023      0.036      120     0.0003     0.0002   False
+1      root      15          3     -0.021      0.037      120     0.0003     0.0002   False
+1      root      18          5     -0.019      0.040      120     0.0003     0.0002   False
+1      neighbor   6          2     -0.013      0.023      120     0.0002     0.0001   False
+1      neighbor  11          2     -0.012      0.014      120     0.0001     0.0001   False
+1      neighbor  23          2     -0.009      0.010      120     0.0001     0.0001   False
+2      neighbor   2          1     -0.008      0.008      168     0.0000     0.0000   False
+1      root      10          1     -0.005      0.005      120     0.0000     0.0000   False
+1      root       4          1     -0.001      0.001      120     0.0000     0.0000   False
+1      root      19          1     -0.001      0.001      112     0.0000     0.0000   False
+GLOBAL_SAMPLE_WNS_NS=-0.098
+GLOBAL_SAMPLE_WNS_OWNER={'layer': 1, 'branch': 'neighbor', 'channel': 8}
+UNCLASSIFIED_CATEGORY=aggregation_dsp_input paths=3 unique_end_cells=3 tns_ns=0.234 worst_ns=-0.090
+UNCLASSIFIED_CATEGORY=control_enable paths=0 unique_end_cells=0 tns_ns=0.000 worst_ns=0.000
+UNCLASSIFIED_CATEGORY=adder_saturation_quantization paths=0 unique_end_cells=0 tns_ns=0.000 worst_ns=0.000
+UNCLASSIFIED_CATEGORY=pipeline_registers paths=36 unique_end_cells=36 tns_ns=0.758 worst_ns=-0.073
+UNCLASSIFIED_CATEGORY=unknown paths=81 unique_end_cells=81 tns_ns=2.537 worst_ns=-0.086
+UNCLASSIFIED_PATHS=120/1000
+CHANNEL_CRITICALITY_TABLE=/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_V2A1_route_default/reports/channel_criticality_table.json

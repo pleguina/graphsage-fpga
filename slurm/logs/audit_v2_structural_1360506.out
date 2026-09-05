@@ -1,0 +1,320 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Mon Aug 24 11:04:33 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source hls/audit_structural_timing_paths.tcl
+# if {$argc != 2} {
+#     error "Usage: vivado -mode batch -source audit_structural_timing_paths.tcl -tclargs <checkpoint> <output.csv>"
+# }
+# proc path_property {path property} {
+#     set value [get_property -quiet $property $path]
+#     return [expr {$value eq "" ? "NA" : $value}]
+# }
+# proc cell_property {cell property} {
+#     set value [get_property -quiet $property $cell]
+#     return [expr {$value eq "" ? "NA" : $value}]
+# }
+# proc csv_clean {value} {
+#     return [string map [list "," ";" "\n" " " "\r" " "] $value]
+# }
+# set checkpoint [lindex $argv 0]
+# set output_csv [lindex $argv 1]
+# open_checkpoint $checkpoint
+Command: open_checkpoint /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_V2_route_default/final.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1474.855 ; gain = 8.906 ; free physical = 189840 ; free virtual = 252363
+INFO: [Device 21-403] Loading part xcvu13p-fsga2577-1-e
+Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3668.434 ; gain = 25.000 ; free physical = 187439 ; free virtual = 250231
+INFO: [Netlist 29-17] Analyzing 48416 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.45 ; elapsed = 00:00:00.48 . Memory (MB): peak = 4048.980 ; gain = 24.422 ; free physical = 187041 ; free virtual = 249854
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-5170] The checkpoint was created with non-default parameter values which do not match the current Vivado settings.  Mismatching parameters are:
+  general.maxThreads
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.84 ; elapsed = 00:00:00.85 . Memory (MB): peak = 5714.289 ; gain = 0.000 ; free physical = 185428 ; free virtual = 248261
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 5714.289 ; gain = 0.000 ; free physical = 185428 ; free virtual = 248261
+Read PlaceDB: Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 6226.180 ; gain = 511.891 ; free physical = 184923 ; free virtual = 247756
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6226.180 ; gain = 0.000 ; free physical = 184923 ; free virtual = 247756
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 6523.695 ; gain = 297.516 ; free physical = 184624 ; free virtual = 247456
+Read Physdb Files: Time (s): cpu = 00:00:33 ; elapsed = 00:00:23 . Memory (MB): peak = 6523.695 ; gain = 809.406 ; free physical = 184624 ; free virtual = 247456
+Restored from archive | CPU: 34.020000 secs | Memory: 720.064133 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:33 ; elapsed = 00:00:23 . Memory (MB): peak = 6523.695 ; gain = 809.406 ; free physical = 184624 ; free virtual = 247456
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.11 . Memory (MB): peak = 6523.695 ; gain = 0.000 ; free physical = 184586 ; free virtual = 247455
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 440 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 440 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:02:18 ; elapsed = 00:02:09 . Memory (MB): peak = 6523.730 ; gain = 5060.750 ; free physical = 184586 ; free virtual = 247455
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'to' option of 'get_timing_paths' is very large: 396685. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'from' option of 'get_timing_paths' is very large: 396685. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ap_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+get_timing_paths: Time (s): cpu = 00:05:02 ; elapsed = 00:01:02 . Memory (MB): peak = 7285.055 ; gain = 761.324 ; free physical = 183865 ; free virtual = 246738
+# set paths [get_timing_paths \
+#     -from [all_registers] \
+#     -to [all_registers] \
+#     -delay_type max \
+#     -max_paths 1000 \
+#     -unique_pins \
+#     -nworst 1]
+# file mkdir [file dirname $output_csv]
+# set output [open $output_csv w]
+# puts $output "rank,slack_ns,datapath_delay_ns,logic_delay_ns,route_delay_ns,logic_levels,skew_ns,start_cell,start_ref,start_hierarchy,end_cell,end_ref,end_hierarchy,max_fanout,average_fanout,primitive_chain"
+# set rank 0
+# foreach path $paths {
+#     incr rank
+#     set start_pin [get_property STARTPOINT_PIN $path]
+#     set end_pin [get_property ENDPOINT_PIN $path]
+#     set start_cell [get_cells -quiet -of_objects $start_pin]
+#     set end_cell [get_cells -quiet -of_objects $end_pin]
+#     set path_cells [get_cells -quiet -of_objects [get_pins -quiet -of_objects $path]]
+#     set path_nets [get_nets -quiet -of_objects [get_pins -quiet -of_objects $path]]
+# 
+#     set primitive_chain {}
+#     foreach cell $path_cells {
+#         set ref_name [cell_property $cell REF_NAME]
+#         if {$ref_name ni $primitive_chain} {
+#             lappend primitive_chain $ref_name
+#         }
+#     }
+# 
+#     set fanout_sum 0.0
+#     set fanout_count 0
+#     set max_fanout 0
+#     foreach net $path_nets {
+#         set fanout [get_property -quiet FLAT_PIN_COUNT $net]
+#         if {$fanout eq ""} {
+#             set fanout [llength [get_pins -quiet -leaf -of_objects $net -filter {DIRECTION == IN}]]
+#         } else {
+#             set fanout [expr {max(0, $fanout - 1)}]
+#         }
+#         set fanout_sum [expr {$fanout_sum + $fanout}]
+#         incr fanout_count
+#         if {$fanout > $max_fanout} { set max_fanout $fanout }
+#     }
+#     set average_fanout [expr {$fanout_count > 0 ? $fanout_sum / $fanout_count : 0.0}]
+# 
+#     set fields [list \
+#         $rank \
+#         [path_property $path SLACK] \
+#         [path_property $path DATAPATH_DELAY] \
+#         [path_property $path DATAPATH_LOGIC_DELAY] \
+#         [path_property $path DATAPATH_NET_DELAY] \
+#         [path_property $path LOGIC_LEVELS] \
+#         [path_property $path SKEW] \
+#         $start_cell \
+#         [cell_property $start_cell REF_NAME] \
+#         [cell_property $start_cell PARENT] \
+#         $end_cell \
+#         [cell_property $end_cell REF_NAME] \
+#         [cell_property $end_cell PARENT] \
+#         $max_fanout \
+#         $average_fanout \
+#         [join $primitive_chain ">"]]
+#     puts $output [join [lmap field $fields {csv_clean $field}] ","]
+# }
+# close $output
+# puts "STRUCTURAL_TIMING_AUDIT=$output_csv"
+STRUCTURAL_TIMING_AUDIT=/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_V2_route_default/reports/structural_timing_paths.csv
+# puts "STRUCTURAL_TIMING_AUDIT_COUNT=$rank"
+STRUCTURAL_TIMING_AUDIT_COUNT=1000
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Mon Aug 24 11:07:53 2026...
+{
+  "audit_csv": "/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_V2_route_default/reports/structural_timing_paths.csv",
+  "negative_paths": 702,
+  "categories": {
+    "aggregation_dsp_input": {
+      "endpoints": 359,
+      "worst_slack_ns": -0.168,
+      "accumulated_negative_slack_ns": 21.81,
+      "average_routing_fraction": 0.7768,
+      "max_fanout": 140,
+      "average_max_fanout": 34.14,
+      "startpoint_primitives": [
+        "FDRE"
+      ],
+      "endpoint_primitives": [
+        "DSP_A_B_DATA",
+        "DSP_PREADD_DATA",
+        "FDRE"
+      ],
+      "hierarchies": [
+        "aggregation/addmul DSP fabric",
+        "hidden/L1-to-L2 staging",
+        "top-level or flattened"
+      ]
+    },
+    "dsp_pipeline_output": {
+      "endpoints": 20,
+      "worst_slack_ns": -0.133,
+      "accumulated_negative_slack_ns": 0.936,
+      "average_routing_fraction": 0.7418,
+      "max_fanout": 140,
+      "average_max_fanout": 115.4,
+      "startpoint_primitives": [
+        "FDRE"
+      ],
+      "endpoint_primitives": [
+        "DSP_A_B_DATA"
+      ],
+      "hierarchies": [
+        "aggregation/addmul DSP fabric"
+      ]
+    },
+    "fabric_multiplier": {
+      "endpoints": 254,
+      "worst_slack_ns": -0.161,
+      "accumulated_negative_slack_ns": 11.647,
+      "average_routing_fraction": 0.6834,
+      "max_fanout": 182,
+      "average_max_fanout": 119.69,
+      "startpoint_primitives": [
+        "FDRE"
+      ],
+      "endpoint_primitives": [
+        "FDRE"
+      ],
+      "hierarchies": [
+        "grp_l1_neighbor_channel_false_16_s_fu_6848",
+        "grp_l1_neighbor_channel_false_18_s_fu_7096",
+        "grp_l1_neighbor_channel_false_20_s_fu_7344",
+        "grp_l1_neighbor_channel_false_22_s_fu_7476",
+        "grp_l1_neighbor_channel_false_23_s_fu_7600",
+        "grp_l1_root_channel_false_0_s_fu_2716",
+        "grp_l1_root_channel_false_10_s_fu_2584",
+        "grp_l1_root_channel_false_8_s_fu_2452",
+        "grp_l2_neighbor_channel_false_1_s_fu_9100"
+      ]
+    },
+    "adder_carry8_reduction": {
+      "endpoints": 44,
+      "worst_slack_ns": -0.155,
+      "accumulated_negative_slack_ns": 2.588,
+      "average_routing_fraction": 0.7449,
+      "max_fanout": 140,
+      "average_max_fanout": 23.64,
+      "startpoint_primitives": [
+        "FDRE"
+      ],
+      "endpoint_primitives": [
+        "FDRE"
+      ],
+      "hierarchies": [
+        "grp_l1_neighbor_channel_false_10_s_fu_6072",
+        "grp_l1_neighbor_channel_false_23_s_fu_7600",
+        "grp_l1_neighbor_channel_false_4_s_fu_5444",
+        "grp_l1_neighbor_channel_false_6_s_fu_5692",
+        "grp_l1_neighbor_channel_false_7_s_fu_5816",
+        "grp_l2_neighbor_channel_false_4_s_fu_9616",
+        "hidden/L1-to-L2 staging",
+        "top-level or flattened"
+      ]
+    },
+    "requantization_shift_clamp": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    },
+    "pipeline_enable_ce_reset": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    },
+    "ordinary_data_register_routing": {
+      "endpoints": 25,
+      "worst_slack_ns": -0.137,
+      "accumulated_negative_slack_ns": 1.035,
+      "average_routing_fraction": 0.9654,
+      "max_fanout": 17,
+      "average_max_fanout": 4.88,
+      "startpoint_primitives": [
+        "FDRE",
+        "FDSE"
+      ],
+      "endpoint_primitives": [
+        "FDRE"
+      ],
+      "hierarchies": [
+        "grp_l2_neighbor_channel_false_1_s_fu_9100",
+        "grp_l2_neighbor_channel_false_5_s_fu_9788",
+        "grp_l2_root_channel_false_0_s_fu_7724",
+        "grp_l2_root_channel_false_5_s_fu_8584",
+        "hidden/L1-to-L2 staging"
+      ]
+    },
+    "output_staging": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    },
+    "other": {
+      "endpoints": 0,
+      "worst_slack_ns": null,
+      "accumulated_negative_slack_ns": 0,
+      "average_routing_fraction": null,
+      "max_fanout": null,
+      "average_max_fanout": null,
+      "startpoint_primitives": [],
+      "endpoint_primitives": [],
+      "hierarchies": []
+    }
+  },
+  "global_wns_path": {
+    "rank": "1",
+    "slack_ns": "-0.168",
+    "datapath_delay_ns": "2.671",
+    "logic_delay_ns": "0.352",
+    "route_delay_ns": "2.319",
+    "logic_levels": "2",
+    "skew_ns": "0.008",
+    "start_cell": "hidden_308_reg_110293_pp0_iter19_reg_reg[0]",
+    "start_ref": "FDRE",
+    "start_hierarchy": "NA",
+    "end_cell": "am_addmul_9ns_9ns_13ns_23_4_1_U14726/graphsage_po2_qat_partitioned_am_addmul_9ns_9ns_13ns_23_4_1_DSP48_0_U/p_reg_reg/DSP_PREADD_DATA_INST",
+    "end_ref": "DSP_PREADD_DATA",
+    "end_hierarchy": "am_addmul_9ns_9ns_13ns_23_4_1_U14726/graphsage_po2_qat_partitioned_am_addmul_9ns_9ns_13ns_23_4_1_DSP48_0_U/p_reg_reg",
+    "max_fanout": "17",
+    "average_fanout": "7.6",
+    "primitive_chain": "FDRE>LUT6>CARRY8>DSP_PREADD_DATA",
+    "category": "aggregation_dsp_input",
+    "hierarchy_hint": "aggregation/addmul DSP fabric"
+  }
+}

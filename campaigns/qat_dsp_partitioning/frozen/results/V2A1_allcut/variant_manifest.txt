@@ -1,0 +1,14 @@
+variant=V2A1_allcut
+l1_root_mask=0
+l1_neighbor_mask=0x1004
+l2_root_mask=0
+l2_neighbor_mask=0
+aggregation_mode=4
+l1_neighbor_acc_pipeline_mask=0xFFFFFF
+l1_root_acc_pipeline_mask=0xFFFFFF
+l2_root_acc_pipeline_mask=0x7F
+l2_neighbor_acc_pipeline_mask=0x7F
+gs_fabric_mul_latency=unset
+gs_dsp_mul_latency=unset
+hls_dsp=552
+hls_project=/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_V2A1_allcut_2024_1

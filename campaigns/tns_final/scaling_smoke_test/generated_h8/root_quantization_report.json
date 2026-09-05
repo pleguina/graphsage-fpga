@@ -1,0 +1,71 @@
+{
+  "model": "ReducedGraphSAGE root_weight=True",
+  "checkpoint": "/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/campaigns/tns_final/scaling_smoke_test/po2_qat_h8/cora/seed_42/po2_qat_root.pth",
+  "quantization": "symmetric INT8 activations/weights, INT32 bias, PO2 branch requantization",
+  "input_is_projected": true,
+  "degree_scale": [
+    0,
+    4096,
+    2048,
+    1365,
+    1024,
+    819,
+    683,
+    585,
+    512
+  ],
+  "activation_scales": {
+    "input": 0.0005614409061867421,
+    "aggregate1": 0.0004570355682861148,
+    "hidden": 0.0018965356697247724,
+    "aggregate2": 0.0018965356697247724,
+    "output": 0.0029813184982209694
+  },
+  "po2_shifts": {
+    "aggregate1": 12,
+    "aggregate2": 12,
+    "layer1_neighbor": 11,
+    "layer1_root": 11,
+    "layer2_neighbor": 9,
+    "layer2_root": 9
+  },
+  "historical_float_comparison": {
+    "max_abs_logit_error": 1.9007780405200236e-08,
+    "prediction_matches": 8,
+    "total_nodes": 8,
+    "integer_predictions": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "float_predictions": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  "test_events": 256,
+  "test_seed": 20260822,
+  "tests": [
+    "historical_cora",
+    "degree1_ring",
+    "degree_sweep_1_to_8",
+    "dense_with_self",
+    "mixed_including_degree0",
+    "zero_input",
+    "positive_saturation_input",
+    "negative_saturation_input",
+    "alternating_extremes_input",
+    "deterministic_random_inputs_and_masks"
+  ]
+}

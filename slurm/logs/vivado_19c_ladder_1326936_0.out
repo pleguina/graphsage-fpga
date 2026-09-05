@@ -1,0 +1,237 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Aug 20 19:32:41 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source hls/build_vivado_19c_ladder_checkpoint.tcl
+# if {![info exists ::env(EXPERIMENT_NAME)] || $::env(EXPERIMENT_NAME) eq ""} {
+#     error "Missing required environment variable EXPERIMENT_NAME"
+# }
+# set script_dir [file dirname [file normalize [info script]]]
+# set repo_root [file normalize [file join $script_dir ..]]
+# set experiment_name $::env(EXPERIMENT_NAME)
+# set experiment_root [file join $repo_root build experiments_19c $experiment_name]
+# set rtl_dir [file join $experiment_root hls solution1 syn verilog]
+# set xdc_file [file join $script_dir graphsage_int8_po2_ooc.xdc]
+# set output_dir [file join $experiment_root vivado_build]
+# set output_checkpoint [file join $experiment_root post_synth.dcp]
+# set clock_period 2.77
+# set rtl_files [glob -nocomplain [file join $rtl_dir *.v]]
+# if {[llength $rtl_files] == 0} {
+#     error "No HLS RTL found in $rtl_dir"
+# }
+# file mkdir $output_dir
+# set vivado_threads [expr {
+#     [info exists ::env(SLURM_CPUS_PER_TASK)]
+#         ? $::env(SLURM_CPUS_PER_TASK)
+#         : 4
+# }]
+# set_param general.maxThreads $vivado_threads
+# puts "EXPERIMENT_NAME=$experiment_name"
+EXPERIMENT_NAME=19c_a_balanced
+# puts "RTL_FILES=[llength $rtl_files]"
+RTL_FILES=6
+# puts "OUTPUT_CHECKPOINT=$output_checkpoint"
+OUTPUT_CHECKPOINT=/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/post_synth.dcp
+# read_verilog $rtl_files
+read_verilog: Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 2186.480 ; gain = 463.148 ; free physical = 377058 ; free virtual = 447519
+# read_xdc $xdc_file
+# synth_design \
+#     -top graphsage_int8_po2 \
+#     -part xcvu13p-fsga2577-1-e \
+#     -mode out_of_context \
+#     -flatten_hierarchy rebuilt \
+#     -retiming
+WARNING: [Common 17-576] 'retiming' is deprecated. Please use -global_retiming option
+Command: synth_design -top graphsage_int8_po2 -part xcvu13p-fsga2577-1-e -mode out_of_context -flatten_hierarchy rebuilt -retiming
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcvu13p'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcvu13p'
+INFO: [Common 17-1540] The version limit for your license is '2026.02' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+INFO: [Device 21-403] Loading part xcvu13p-fsga2577-1-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1413581
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 3464.410 ; gain = 353.688 ; free physical = 375200 ; free virtual = 445711
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'graphsage_int8_po2' [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:9]
+INFO: [Synth 8-6157] synthesizing module 'graphsage_int8_po2_mul_16s_8s_24_2_1' [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mul_16s_8s_24_2_1.v:5]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 2 - type: integer 
+	Parameter din0_WIDTH bound to: 16 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter dout_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'graphsage_int8_po2_mul_16s_8s_24_2_1' (0#1) [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mul_16s_8s_24_2_1.v:5]
+INFO: [Synth 8-6157] synthesizing module 'graphsage_int8_po2_mul_8s_8s_16_1_1' [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mul_8s_8s_16_1_1.v:5]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter dout_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'graphsage_int8_po2_mul_8s_8s_16_1_1' (0#1) [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mul_8s_8s_16_1_1.v:5]
+INFO: [Synth 8-6157] synthesizing module 'graphsage_int8_po2_mul_16s_7ns_23_2_1' [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mul_16s_7ns_23_2_1.v:5]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 2 - type: integer 
+	Parameter din0_WIDTH bound to: 16 - type: integer 
+	Parameter din1_WIDTH bound to: 7 - type: integer 
+	Parameter dout_WIDTH bound to: 23 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'graphsage_int8_po2_mul_16s_7ns_23_2_1' (0#1) [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mul_16s_7ns_23_2_1.v:5]
+INFO: [Synth 8-6157] synthesizing module 'graphsage_int8_po2_mac_muladd_16s_8s_24s_25_4_1' [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mac_muladd_16s_8s_24s_25_4_1.v:45]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 4 - type: integer 
+	Parameter din0_WIDTH bound to: 16 - type: integer 
+	Parameter din1_WIDTH bound to: 8 - type: integer 
+	Parameter din2_WIDTH bound to: 24 - type: integer 
+	Parameter dout_WIDTH bound to: 25 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'graphsage_int8_po2_mac_muladd_16s_8s_24s_25_4_1_DSP48_0' [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mac_muladd_16s_8s_24s_25_4_1.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'graphsage_int8_po2_mac_muladd_16s_8s_24s_25_4_1_DSP48_0' (0#1) [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mac_muladd_16s_8s_24s_25_4_1.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'graphsage_int8_po2_mac_muladd_16s_8s_24s_25_4_1' (0#1) [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mac_muladd_16s_8s_24s_25_4_1.v:45]
+INFO: [Synth 8-6157] synthesizing module 'graphsage_int8_po2_mac_muladd_16s_7ns_23s_24_4_1' [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mac_muladd_16s_7ns_23s_24_4_1.v:45]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 4 - type: integer 
+	Parameter din0_WIDTH bound to: 16 - type: integer 
+	Parameter din1_WIDTH bound to: 7 - type: integer 
+	Parameter din2_WIDTH bound to: 23 - type: integer 
+	Parameter dout_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'graphsage_int8_po2_mac_muladd_16s_7ns_23s_24_4_1_DSP48_0' [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mac_muladd_16s_7ns_23s_24_4_1.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'graphsage_int8_po2_mac_muladd_16s_7ns_23s_24_4_1_DSP48_0' (0#1) [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mac_muladd_16s_7ns_23s_24_4_1.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'graphsage_int8_po2_mac_muladd_16s_7ns_23s_24_4_1' (0#1) [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2_mac_muladd_16s_7ns_23s_24_4_1.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'graphsage_int8_po2' (0#1) [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:9]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_567_reg_261937_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175756]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_566_reg_261922_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175755]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_565_reg_261907_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175754]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_564_reg_261892_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175753]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_563_reg_261877_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175752]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_562_reg_261862_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175751]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_561_reg_261847_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175750]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_560_reg_261832_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175749]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_559_reg_261817_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175748]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_558_reg_261802_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175747]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_557_reg_261787_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175746]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_556_reg_261772_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175745]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_555_reg_261757_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175744]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_554_reg_261742_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175743]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_553_reg_261727_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175742]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_552_reg_261712_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175741]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_551_reg_261697_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175740]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_550_reg_261682_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175739]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_549_reg_261667_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175738]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_548_reg_261652_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175737]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_547_reg_261637_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175736]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_546_reg_261622_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175735]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_545_reg_261607_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175734]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_544_reg_261592_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175733]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_543_reg_261577_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175732]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_542_reg_261562_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175731]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_541_reg_261547_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175730]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_540_reg_261532_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175729]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_539_reg_261517_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175728]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_538_reg_261502_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175727]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_537_reg_261487_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175726]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_536_reg_261472_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175725]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_535_reg_261457_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175724]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_534_reg_261442_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175723]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_533_reg_261427_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175722]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_532_reg_261412_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175721]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_531_reg_261397_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175720]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_530_reg_261382_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175719]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_529_reg_261367_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175718]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_528_reg_261352_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175717]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_527_reg_261337_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175716]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_526_reg_261322_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175715]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_525_reg_261307_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175714]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_524_reg_261292_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175713]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_523_reg_261277_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175712]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_522_reg_261262_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175711]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_521_reg_261247_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175710]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_520_reg_261232_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175709]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_519_reg_261217_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175708]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_518_reg_261202_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175707]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_517_reg_261187_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175706]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_516_reg_261172_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175705]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_515_reg_261157_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175704]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_514_reg_261142_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175703]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_513_reg_261127_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175702]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_512_reg_261112_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175701]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_319_reg_227761_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175700]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_318_reg_227746_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175699]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_317_reg_227731_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175698]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_316_reg_227716_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175697]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_315_reg_227701_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175696]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_314_reg_227686_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175695]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_313_reg_227671_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175694]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_312_reg_227656_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175693]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_311_reg_227641_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175692]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_310_reg_227626_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175691]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_309_reg_227611_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175690]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_308_reg_227596_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175689]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_307_reg_227581_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175688]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_306_reg_227566_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175687]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_305_reg_227551_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175686]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_304_reg_227536_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175685]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_303_reg_227521_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175684]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_302_reg_227506_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175683]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_301_reg_227491_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175682]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_300_reg_227476_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175681]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_299_reg_227461_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175680]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_298_reg_227446_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175679]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_297_reg_227431_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175678]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_296_reg_227416_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175677]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_295_reg_227401_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175676]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_294_reg_227386_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175675]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_293_reg_227371_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175674]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_292_reg_227356_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175673]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_291_reg_227341_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175672]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_290_reg_227326_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175671]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_289_reg_227311_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175670]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_288_reg_227296_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175669]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_287_reg_227281_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175668]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_286_reg_227266_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175667]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_285_reg_227251_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175666]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_284_reg_227236_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175665]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_283_reg_227221_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175664]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_282_reg_227206_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175663]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_281_reg_227191_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175662]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_280_reg_227176_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175661]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_279_reg_227161_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175660]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_278_reg_227146_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175659]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_277_reg_227131_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175658]
+INFO: [Synth 8-3936] Found unconnected internal register 'rounded_276_reg_227116_reg' and it is trimmed from '22' to '14' bits. [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/experiments_19c/19c_a_balanced/hls/solution1/syn/verilog/graphsage_int8_po2.v:175657]
+INFO: [Common 17-14] Message 'Synth 8-3936' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-7129] Port rst in module graphsage_int8_po2_mac_muladd_16s_7ns_23s_24_4_1_DSP48_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port rst in module graphsage_int8_po2_mac_muladd_16s_8s_24s_25_4_1_DSP48_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_int8_po2_mul_16s_7ns_23_2_1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_int8_po2_mul_16s_8s_24_2_1 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:55 . Memory (MB): peak = 4370.262 ; gain = 1259.539 ; free physical = 374306 ; free virtual = 444833
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:56 . Memory (MB): peak = 4370.262 ; gain = 1259.539 ; free physical = 374307 ; free virtual = 444834
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:56 . Memory (MB): peak = 4370.262 ; gain = 1259.539 ; free physical = 374307 ; free virtual = 444834
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 4561.441 ; gain = 0.000 ; free physical = 374132 ; free virtual = 444659
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/graphsage_int8_po2_ooc.xdc]
+create_clock: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 5415.324 ; gain = 25.984 ; free physical = 373514 ; free virtual = 444064
+Finished Parsing XDC File [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/graphsage_int8_po2_ooc.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/hls/graphsage_int8_po2_ooc.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/graphsage_int8_po2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/graphsage_int8_po2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 5519.324 ; gain = 0.000 ; free physical = 373406 ; free virtual = 443956
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+

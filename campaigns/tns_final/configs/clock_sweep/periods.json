@@ -1,0 +1,18 @@
+{
+  "description": "Routed clock-frequency sweep (Section 11). Same frozen A4 RTL and the final SSI_SpreadLogic_high + retime strategy; only CLOCK_PERIOD_NS changes.",
+  "input_checkpoint": "build/vivado_sweep/qat_dsp_V2A1_allcut_post_synth.dcp",
+  "place_directive": "SSI_SpreadLogic_high",
+  "route_directive": "Default",
+  "use_retime": 1,
+  "periods_ns": [3.00, 2.90, 2.80, 2.77, 2.72, 2.67],
+  "run_dirs": {
+    "3.00": "build/vivado_sweep/qat_dsp_V2A1_allcut_ssi_retime_route_clk300",
+    "2.90": "build/vivado_sweep/qat_dsp_V2A1_allcut_ssi_retime_route_clk290",
+    "2.80": "build/vivado_sweep/qat_dsp_V2A1_allcut_ssi_retime_route_clk280",
+    "2.77": "build/vivado_sweep/qat_dsp_V2A1_allcut_ssi_retime_route",
+    "2.72": "build/vivado_sweep/qat_dsp_V2A1_allcut_ssi_retime_route_clk272",
+    "2.67": "build/vivado_sweep/qat_dsp_V2A1_allcut_ssi_retime_route_clk267"
+  },
+  "status_2_77": "existing (reused as A5/R1)",
+  "status_other": "new - submitted this session"
+}

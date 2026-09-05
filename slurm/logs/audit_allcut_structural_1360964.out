@@ -1,0 +1,145 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Tue Aug 25 09:51:22 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source campaigns/qat_dsp_partitioning/hls/audit_structural_timing.tcl
+# if {$argc != 2} {
+#     error "Usage: vivado -mode batch -source audit_structural_timing.tcl -tclargs <checkpoint> <output.csv>"
+# }
+# proc path_property {path property} {
+#     set value [get_property -quiet $property $path]
+#     return [expr {$value eq "" ? "NA" : $value}]
+# }
+# proc cell_property {cell property} {
+#     set value [get_property -quiet $property $cell]
+#     return [expr {$value eq "" ? "NA" : $value}]
+# }
+# proc csv_clean {value} {
+#     return [string map [list "," ";" "\n" " " "\r" " "] $value]
+# }
+# set checkpoint [lindex $argv 0]
+# set output_csv [lindex $argv 1]
+# open_checkpoint $checkpoint
+Command: open_checkpoint build/vivado_sweep/qat_dsp_V2A1_allcut_route_default/final.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1473.918 ; gain = 7.938 ; free physical = 191320 ; free virtual = 252489
+INFO: [Device 21-403] Loading part xcvu13p-fsga2577-1-e
+Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3724.129 ; gain = 31.000 ; free physical = 188806 ; free virtual = 250249
+INFO: [Netlist 29-17] Analyzing 49531 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.49 ; elapsed = 00:00:00.51 . Memory (MB): peak = 4108.363 ; gain = 26.422 ; free physical = 188404 ; free virtual = 249868
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-5170] The checkpoint was created with non-default parameter values which do not match the current Vivado settings.  Mismatching parameters are:
+  general.maxThreads
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.85 ; elapsed = 00:00:00.85 . Memory (MB): peak = 5807.789 ; gain = 0.000 ; free physical = 186753 ; free virtual = 248237
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 5807.789 ; gain = 0.000 ; free physical = 186753 ; free virtual = 248237
+Read PlaceDB: Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 6340.680 ; gain = 532.891 ; free physical = 186227 ; free virtual = 247710
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6340.680 ; gain = 0.000 ; free physical = 186227 ; free virtual = 247710
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 6649.953 ; gain = 309.273 ; free physical = 185927 ; free virtual = 247410
+Read Physdb Files: Time (s): cpu = 00:00:35 ; elapsed = 00:00:26 . Memory (MB): peak = 6649.953 ; gain = 842.164 ; free physical = 185927 ; free virtual = 247410
+Restored from archive | CPU: 36.360000 secs | Memory: 750.259750 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:36 ; elapsed = 00:00:26 . Memory (MB): peak = 6649.953 ; gain = 842.164 ; free physical = 185927 ; free virtual = 247410
+Netlist sorting complete. Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.13 . Memory (MB): peak = 6649.953 ; gain = 0.000 ; free physical = 185890 ; free virtual = 247410
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 432 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 432 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:02:22 ; elapsed = 00:02:13 . Memory (MB): peak = 6649.988 ; gain = 5187.977 ; free physical = 185892 ; free virtual = 247412
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'to' option of 'get_timing_paths' is very large: 424028. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+CRITICAL WARNING: [Vivado 12-4439] The number of objects collected by the 'from' option of 'get_timing_paths' is very large: 424028. This may lead to serious performance issues and out-of-memory conditions in handling the results.
+Resolution: Further filtering of the command results, or narrowing the scope of the command is recommended.
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ap_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+get_timing_paths: Time (s): cpu = 00:05:06 ; elapsed = 00:01:04 . Memory (MB): peak = 7444.812 ; gain = 794.824 ; free physical = 185095 ; free virtual = 246618
+# set paths [get_timing_paths \
+#     -from [all_registers] \
+#     -to [all_registers] \
+#     -delay_type max \
+#     -max_paths 1000 \
+#     -unique_pins \
+#     -nworst 1]
+# file mkdir [file dirname $output_csv]
+# set output [open $output_csv w]
+# puts $output "rank,slack_ns,datapath_delay_ns,logic_delay_ns,route_delay_ns,logic_levels,skew_ns,start_cell,start_ref,start_hierarchy,start_slr,start_loc,end_cell,end_ref,end_hierarchy,end_slr,end_loc,max_fanout,average_fanout,primitive_chain"
+# set rank 0
+# foreach path $paths {
+#     incr rank
+#     set start_pin [get_property STARTPOINT_PIN $path]
+#     set end_pin [get_property ENDPOINT_PIN $path]
+#     set start_cell [get_cells -quiet -of_objects $start_pin]
+#     set end_cell [get_cells -quiet -of_objects $end_pin]
+#     set path_cells [get_cells -quiet -of_objects [get_pins -quiet -of_objects $path]]
+#     set path_nets [get_nets -quiet -of_objects [get_pins -quiet -of_objects $path]]
+# 
+#     set primitive_chain {}
+#     foreach cell $path_cells {
+#         set ref_name [cell_property $cell REF_NAME]
+#         if {$ref_name ni $primitive_chain} {
+#             lappend primitive_chain $ref_name
+#         }
+#     }
+# 
+#     set fanout_sum 0.0
+#     set fanout_count 0
+#     set max_fanout 0
+#     foreach net $path_nets {
+#         set fanout [get_property -quiet FLAT_PIN_COUNT $net]
+#         if {$fanout eq ""} {
+#             set fanout [llength [get_pins -quiet -leaf -of_objects $net -filter {DIRECTION == IN}]]
+#         } else {
+#             set fanout [expr {max(0, $fanout - 1)}]
+#         }
+#         set fanout_sum [expr {$fanout_sum + $fanout}]
+#         incr fanout_count
+#         if {$fanout > $max_fanout} { set max_fanout $fanout }
+#     }
+#     set average_fanout [expr {$fanout_count > 0 ? $fanout_sum / $fanout_count : 0.0}]
+# 
+#     set fields [list \
+#         $rank \
+#         [path_property $path SLACK] \
+#         [path_property $path DATAPATH_DELAY] \
+#         [path_property $path DATAPATH_LOGIC_DELAY] \
+#         [path_property $path DATAPATH_NET_DELAY] \
+#         [path_property $path LOGIC_LEVELS] \
+#         [path_property $path SKEW] \
+#         $start_cell \
+#         [cell_property $start_cell REF_NAME] \
+#         [cell_property $start_cell PARENT] \
+#         [expr {[get_slrs -quiet -of_objects $start_cell] eq "" ? "NA" : [get_slrs -quiet -of_objects $start_cell]}] \
+#         [cell_property $start_cell LOC] \
+#         $end_cell \
+#         [cell_property $end_cell REF_NAME] \
+#         [cell_property $end_cell PARENT] \
+#         [expr {[get_slrs -quiet -of_objects $end_cell] eq "" ? "NA" : [get_slrs -quiet -of_objects $end_cell]}] \
+#         [cell_property $end_cell LOC] \
+#         $max_fanout \
+#         $average_fanout \
+#         [join $primitive_chain ">"]]
+#     puts $output [join [lmap field $fields {csv_clean $field}] ","]
+# }
+# close $output
+# puts "STRUCTURAL_TIMING_AUDIT=$output_csv"
+STRUCTURAL_TIMING_AUDIT=build/vivado_sweep/qat_dsp_V2A1_allcut_route_default/reports/structural_timing_paths.csv
+# puts "STRUCTURAL_TIMING_AUDIT_COUNT=$rank"
+STRUCTURAL_TIMING_AUDIT_COUNT=1000
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 25 09:54:49 2026...

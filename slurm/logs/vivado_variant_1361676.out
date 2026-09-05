@@ -1,0 +1,135 @@
+VARIANT_DSP_GATE_PASS=320 limit=512
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Wed Aug 26 12:19:56 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+INFO: [Common 17-1239] XILINX_LOCAL_USER_DATA is set to '/tmp/pleguina/xilinx_user_data'.
+source campaigns/qat_dsp_partitioning/hls/build_variant_checkpoint.tcl
+# set script_dir [file dirname [file normalize [info script]]]
+# set repo_root [file normalize [file join $script_dir .. .. ..]]
+# if {![info exists ::env(VARIANT_NAME)] || $::env(VARIANT_NAME) eq ""} {
+#     error "Missing required environment variable VARIANT_NAME"
+# }
+# set variant $::env(VARIANT_NAME)
+# set package_root [file join $repo_root transfer cora_graphsage_dynamic_root_hls_updated build cora_graphsage_dynamic_root_hls]
+# set rtl_dir [file join $package_root build hls cora_po2_qat_${variant}_2024_1 solution1 syn verilog]
+# set xdc_file [file join $repo_root hls graphsage_int8_po2_ooc.xdc]
+# set output_dir [file join $repo_root build vivado_sweep qat_dsp_${variant}_build]
+# set output_checkpoint [file join $repo_root build vivado_sweep qat_dsp_${variant}_post_synth.dcp]
+# set rtl_files [glob -nocomplain [file join $rtl_dir *.v]]
+# if {[llength $rtl_files] == 0} { error "No variant HLS RTL found in $rtl_dir" }
+# if {![file exists $xdc_file]} { error "Missing OOC constraints: $xdc_file" }
+# file mkdir $output_dir
+# set vivado_threads [expr {[info exists ::env(SLURM_CPUS_PER_TASK)] ? $::env(SLURM_CPUS_PER_TASK) : 4}]
+# set_param general.maxThreads $vivado_threads
+# read_verilog $rtl_files
+read_verilog: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 1950.875 ; gain = 466.148 ; free physical = 168009 ; free virtual = 234347
+# read_xdc $xdc_file
+# synth_design -top graphsage_po2_qat_partitioned -part xcvu13p-fsga2577-1-e -mode out_of_context -flatten_hierarchy rebuilt
+Command: synth_design -top graphsage_po2_qat_partitioned -part xcvu13p-fsga2577-1-e -mode out_of_context -flatten_hierarchy rebuilt
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcvu13p'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcvu13p'
+INFO: [Common 17-1540] The version limit for your license is '2026.02' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for new releases.
+INFO: [Device 21-403] Loading part xcvu13p-fsga2577-1-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1703042
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:40 . Memory (MB): peak = 3201.086 ; gain = 353.688 ; free physical = 165386 ; free virtual = 231921
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6014] Unused sequential element ap_enable_reg_pp0_iter49_reg was removed.  [/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_A3_2024_1/solution1/syn/verilog/graphsage_po2_qat_partitioned.v:42604]
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_13ns_10ns_23_5_1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_add_10ns_10ns_10_2_1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_13ns_11s_24_5_1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_add_11s_11s_11_2_1 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_add_18s_18s_18_2_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_7ns_8s_15_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_7ns_5s_12_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_7ns_8ns_14_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_7ns_6ns_12_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_7ns_7ns_13_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_7ns_7s_14_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_7ns_5ns_11_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_add_18ns_18s_18_2_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_7ns_4s_11_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_7ns_6s_13_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_add_18s_18ns_18_2_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_add_17ns_17s_17_2_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_7ns_3ns_9_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_7ns_4ns_10_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_8s_8ns_16_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_8s_8s_16_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_8s_4ns_12_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_8s_7ns_15_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_8s_7s_15_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_8s_6s_14_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_8s_6ns_14_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_8s_5ns_13_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_8s_3s_11_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_8s_5s_13_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_add_15s_15s_15_2_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_8s_4s_12_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_8s_3ns_11_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port rst in module graphsage_po2_qat_partitioned_am_addmul_8s_8s_8s_16_4_0_DSP48_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port reset in module graphsage_po2_qat_partitioned_mul_8s_2s_10_4_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port rst in module graphsage_po2_qat_partitioned_am_addmul_8s_8s_7s_15_4_0_DSP48_0 is either unconnected or has no load
+INFO: [Synth 8-7129] Port rst in module graphsage_po2_qat_partitioned_ama_addmuladd_8s_8s_7s_14s_15_4_0_DSP48_0 is either unconnected or has no load
+An unrecoverable error has occured: 3E3CA4A2-00000060-25000000
+0: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_synth.so(_ZN7USignal14printBacktraceEi+0x50) [0x7fdd5a83d100]
+1: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_synth.so(_ZN4USys5abortEPKcj+0x66) [0x7fdd5a711c36]
+2: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_synth.so(_ZN14UDupFileBufferC2EPKcb+0x172) [0x7fdd5a7e3562]
+3: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_synth.so(_ZN4UDupC2EbbPKcP10UDupStrapsP14UDupStrapTable+0x4d) [0x7fdd5a7e399d]
+4: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_synth.so(_ZN4NDupC1EbbPKcbP14NDupStrapTable+0x59) [0x7fdd5a7dbcc9]
+5: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_synth.so(_ZN4NDup10dumpStrapsEP10NDupStrapsPKcP5NDesCS3_P14NDupStrapTable+0x3a) [0x7fdd5a7e186a]
+6: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_synth.so(_ZNK5NDesC8dumpPathERK7UStringPKc+0x264) [0x7fdd5a6db074]
+7: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_synth.so(_ZN7HARTNDb11writeDesignERK7UStringS2_b+0xb0) [0x7fdd58d223f0]
+8: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_synth.so(_ZN7HARTNDb9elaborateERK7UStringbbPKc+0x339) [0x7fdd58d34c79]
+9: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_synth.so(_ZN7HARTNDb10synthesizeERK7UStringbbPKc+0x30f) [0x7fdd58d50def]
+10: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_synth.so(+0x206d666) [0x7fdd59ad6666]
+11: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_synth.so(+0x206d826) [0x7fdd59ad6826]
+12: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_synth.so(+0x1fc4de2) [0x7fdd59a2dde2]
+13: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libtcl8.6.so(TclNRRunCallbacks+0x47) [0x7fdd712bc497]
+14: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_commontasks.so(+0x468b67) [0x7fdd67739b67]
+15: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libtcl8.6.so(TclNRRunCallbacks+0x47) [0x7fdd712bc497]
+16: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_commontasks.so(+0x468ac4) [0x7fdd67739ac4]
+17: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libtcl8.6.so(TclNRRunCallbacks+0x47) [0x7fdd712bc497]
+18: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libtcl8.6.so(+0x45309) [0x7fdd712be309]
+19: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libtcl8.6.so(TclSubstTokens+0x4a9) [0x7fdd71386d59]
+20: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libtcl8.6.so(+0x45153) [0x7fdd712be153]
+21: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libtcl8.6.so(Tcl_FSEvalFileEx+0x1f8) [0x7fdd71373ae8]
+22: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_commontasks.so(+0x48349d) [0x7fdd6775449d]
+23: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_common.so(+0x81e9c4) [0x7fdd74f069c4]
+24: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libtcl8.6.so(TclNRRunCallbacks+0x47) [0x7fdd712bc497]
+25: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_common.so(_ZN3hdi8tcltasks12task_manager11eval_in_tclEP10Tcl_InterpP7Tcl_ObjPKcb+0xe33) [0x7fdd74f0947f]
+26: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_common.so(_ZNK3hdi8tcltasks9tclcmdobj4evalEPKcb+0x19) [0x7fdd74eaa17f]
+27: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_designutils.so(_ZN10HRTInvoker15inProcessLaunchER11HDGUIStatus+0x337) [0x7fdd44c3d4e7]
+28: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_designutils.so(_ZN10HRTInvoker6launchER11HDGUIStatus+0x2f) [0x7fdd44c3dabf]
+29: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_project.so(_ZN13HAPRProjUtils20openRodinElabNetlistEP11HAPRProjectRK14HAPRDesignSpecPK8HDARPartR11HDGUIStatus+0x8d1) [0x7fdd61d47911]
+30: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_project.so(_ZN10HAPRDesign12openNetlist_ER11HDGUIStatus+0x15cb) [0x7fdd61dc81bb]
+31: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_project.so(_ZN10HAPRDesign22openAndProcessNetlist_ER11HDGUIStatusbRbRSt3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES9_St4lessIS9_ESaISt4pairIKS9_S9_EEE+0x203) [0x7fdd61dce163]
+32: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_project.so(_ZN10HAPRDesign13refreshDesignER11HDGUIStatus+0x3cf) [0x7fdd61dd0aaf]
+33: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_project.so(_ZN10HAPRDesign10openAsSpecERK14HAPRDesignSpecR11HDGUIStatus+0x31) [0x7fdd61dd3fc1]
+34: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_project.so(_ZN11HAPRProject11openDesign_ERK14HAPRDesignSpecR11HDGUIStatus+0x15f) [0x7fdd61e5272f]
+35: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_project.so(_ZN11HAPRProject9elaborateEPK8HDARPartP11HADAFileSetS4_RKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEbSC_bbibbSC_bSA_bbbbibbbbR11HDGUIStatusP21BlockModelElabOptions+0x324) [0x7fdd61e53a14]
+36: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_vivadotasks.so(+0x5518bb) [0x7fdd629888bb]
+37: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_vivadotasks.so(+0x55466e) [0x7fdd6298b66e]
+38: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_common.so(+0x81e9c4) [0x7fdd74f069c4]
+39: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libtcl8.6.so(TclNRRunCallbacks+0x47) [0x7fdd712bc497]
+40: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libtcl8.6.so(+0x45309) [0x7fdd712be309]
+41: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libtcl8.6.so(Tcl_FSEvalFileEx+0x1f8) [0x7fdd71373ae8]
+42: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_commontasks.so(+0x48349d) [0x7fdd6775449d]
+43: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_common.so(+0x81e9c4) [0x7fdd74f069c4]
+44: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libtcl8.6.so(TclNRRunCallbacks+0x47) [0x7fdd712bc497]
+45: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_commontasks.so(+0x45b5f8) [0x7fdd6772c5f8]
+46: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_commontasks.so(+0x45caed) [0x7fdd6772daed]
+47: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_common.so(+0x81e9c4) [0x7fdd74f069c4]
+48: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libtcl8.6.so(TclNRRunCallbacks+0x47) [0x7fdd712bc497]
+49: /nfs/fanae/vivado/2025.2/Vivado/lib/lnx64.o/libxv_commonmain.so(+0x12dfb) [0x7fdd758efdfb]
+Abnormal program termination (6)
+We are unable to write a trace file, probably because the current working directory is not writable.

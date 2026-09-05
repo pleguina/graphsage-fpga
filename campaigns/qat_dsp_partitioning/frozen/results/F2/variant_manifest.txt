@@ -1,0 +1,9 @@
+variant=F2
+l1_root_mask=0
+l1_neighbor_mask=0x1004
+l2_root_mask=0
+l2_neighbor_mask=0
+aggregation_mode=4
+l1_neighbor_acc_pipeline_mask=0x100
+hls_dsp=552
+hls_project=/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_F2_2024_1

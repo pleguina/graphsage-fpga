@@ -1,0 +1,79 @@
+{
+  "description": "Architecture ablation A0-A5. All entries route with the common Default/Default physical flow (no retime) except A5, which uses the final validated SSI_SpreadLogic_high + retime strategy on the identical A4 RTL. ROOT_AGGREGATION_MODE=4 (GS_AGG_PIPELINED_DSP) is held constant across A0/A1/A3/A4/A5 so only channelization, DSP mask, and pipeline-cut masks vary. A2 intentionally reuses V2A1, which also holds AGGREGATION_MODE=4.",
+  "clock_period_ns": 2.77,
+  "fpga_part": "xcvu13p-fsga2577-1-e",
+  "variants": {
+    "A0": {
+      "label": "Monolithic QAT-PO2 baseline",
+      "channelized": false,
+      "selective_dsp": false,
+      "acc_cuts": false,
+      "physical_strategy": "common",
+      "top_function": "graphsage_po2_qat_root_dynamic_const_weights",
+      "hls_project": "transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_root_dynamic_const_weights_2024_1",
+      "run_dir": "build/vivado_sweep/updated_qat_po2_low_dsp_route_default",
+      "status": "existing"
+    },
+    "A1": {
+      "label": "Channelized hierarchy only (no selective DSP, no pipeline cuts)",
+      "channelized": true,
+      "selective_dsp": false,
+      "acc_cuts": false,
+      "physical_strategy": "common",
+      "top_function": "graphsage_po2_qat_partitioned",
+      "hls_project": "transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_partitioned_2024_1",
+      "run_dir": "build/vivado_sweep/updated_qat_partitioned_baseline_route_default",
+      "status": "existing"
+    },
+    "A2": {
+      "label": "Channelized + selective DSP mapping (no pipeline cuts)",
+      "channelized": true,
+      "selective_dsp": true,
+      "acc_cuts": false,
+      "physical_strategy": "common",
+      "masks": {"L1_ROOT_MASK": "0x0", "L1_NEIGHBOR_MASK": "0x1004", "L2_ROOT_MASK": "0x0", "L2_NEIGHBOR_MASK": "0x0", "AGGREGATION_MODE": 4},
+      "hls_project": "transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_V2A1_2024_1",
+      "run_dir": "build/vivado_sweep/qat_dsp_V2A1_route_default",
+      "status": "existing (reused as V2A1)"
+    },
+    "A3": {
+      "label": "Channelized + accumulator cuts (all-fabric multiplier policy)",
+      "channelized": true,
+      "selective_dsp": false,
+      "acc_cuts": true,
+      "physical_strategy": "common",
+      "masks": {"L1_ROOT_MASK": "0x0", "L1_NEIGHBOR_MASK": "0x0", "L2_ROOT_MASK": "0x0", "L2_NEIGHBOR_MASK": "0x0", "AGGREGATION_MODE": 4,
+                 "L1_ROOT_ACC_PIPELINE_MASK": "0xFFFFFF", "L1_NEIGHBOR_ACC_PIPELINE_MASK": "0xFFFFFF",
+                 "L2_ROOT_ACC_PIPELINE_MASK": "0x7F", "L2_NEIGHBOR_ACC_PIPELINE_MASK": "0x7F"},
+      "hls_project": "transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_A3_2024_1",
+      "run_dir": "build/vivado_sweep/qat_dsp_A3_route_default",
+      "status": "new - submitted this session"
+    },
+    "A4": {
+      "label": "Channelized + selective DSP + accumulator cuts (final HLS architecture)",
+      "channelized": true,
+      "selective_dsp": true,
+      "acc_cuts": true,
+      "physical_strategy": "common",
+      "masks": {"L1_ROOT_MASK": "0x0", "L1_NEIGHBOR_MASK": "0x1004", "L2_ROOT_MASK": "0x0", "L2_NEIGHBOR_MASK": "0x0", "AGGREGATION_MODE": 4,
+                 "L1_ROOT_ACC_PIPELINE_MASK": "0xFFFFFF", "L1_NEIGHBOR_ACC_PIPELINE_MASK": "0xFFFFFF",
+                 "L2_ROOT_ACC_PIPELINE_MASK": "0x7F", "L2_NEIGHBOR_ACC_PIPELINE_MASK": "0x7F"},
+      "hls_project": "transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_V2A1_allcut_2024_1",
+      "run_dir": "build/vivado_sweep/qat_dsp_V2A1_allcut_route_default",
+      "status": "existing (reused as V2A1_allcut)"
+    },
+    "A5": {
+      "label": "Final physical implementation (A4 RTL, SSI_SpreadLogic_high + retime)",
+      "channelized": true,
+      "selective_dsp": true,
+      "acc_cuts": true,
+      "physical_strategy": "final",
+      "place_directive": "SSI_SpreadLogic_high",
+      "route_directive": "Default",
+      "use_retime": 1,
+      "hls_project": "transfer/cora_graphsage_dynamic_root_hls_updated/build/cora_graphsage_dynamic_root_hls/build/hls/cora_po2_qat_V2A1_allcut_2024_1",
+      "run_dir": "build/vivado_sweep/qat_dsp_V2A1_allcut_ssi_retime_route",
+      "status": "existing (reused as V2A1_allcut_ssi_retime_route)"
+    }
+  }
+}

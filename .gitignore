@@ -1,0 +1,40 @@
+# Vivado/Vitis build products and tool caches (regenerable from scripts/configs below)
+build/
+.Xil/
+*.jou
+*.log
+*.backup.log
+vivado*.log
+vitis_hls.log
+.Xil.rc
+.rst
+webtalk*.log
+webtalk*.jou
+
+# HLS tool-generated solution directories (regenerable via the *.tcl scripts that drive them)
+hls/graphsage_int8_po2/solution1/
+hls/cora_graphsage_hls_test_bundle/build/*/hls/*/solution1/
+**/solution1/.autopilot/
+**/solution1/csim/
+**/solution1/sim/
+**/solution1/syn/report/*.xml
+**/*.dcp
+**/*.bit
+**/*.ltx
+**/*.wdb
+
+# Legacy transfer bundles — snapshots of earlier build trees, not source
+transfer/
+
+# Python virtualenvs
+**/scaling_venv/
+**/*venv*/lib/
+**/__pycache__/
+*.pyc
+
+# Misc large scratch
+cong/
+
+# Note: slurm/logs/ and campaigns/*/logs/ are intentionally NOT ignored —
+# they're the small (~25MB total), load-bearing evidence artifacts this
+# audit relied on (csim/cosim/vivado job output). Keep them for provenance.

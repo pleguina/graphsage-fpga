@@ -1,0 +1,86 @@
+{
+  "dataset": "Cora",
+  "seed": 42,
+  "root_weight": true,
+  "dimensions": {
+    "nodes": 2708,
+    "edges": 10556,
+    "features": 1433,
+    "classes": 7,
+    "train_nodes": 140,
+    "validation_nodes": 500,
+    "test_nodes": 1000
+  },
+  "training": {
+    "float_best_epoch": 160,
+    "float_epochs": 200,
+    "qat_epochs": 200
+  },
+  "metrics": {
+    "float_root": {
+      "train": 1.0,
+      "validation": 0.7519999742507935,
+      "test": 0.7649999856948853
+    },
+    "ptq_int8_root": {
+      "train": 1.0,
+      "validation": 0.7400000095367432,
+      "test": 0.7670000195503235
+    },
+    "po2_root": {
+      "train": 1.0,
+      "validation": 0.7459999918937683,
+      "test": 0.7630000114440918
+    },
+    "qat_root": {
+      "train": 1.0,
+      "validation": 0.7419999837875366,
+      "test": 0.7559999823570251
+    }
+  },
+  "details": {
+    "ptq_int8_root": {
+      "scales": {
+        "input": 0.005679484427444578,
+        "aggregate1": 0.005502526215680941,
+        "hidden": 0.01669747622932975,
+        "aggregate2": 0.016053725415327416,
+        "output": 0.12119901461864081
+      },
+      "po2_shifts": null,
+      "saturation_percent": {
+        "input": 0.002307976366322009,
+        "aggregate1": 0.002307976366322009,
+        "hidden": 0.0011539881831610045,
+        "aggregate2": 0.0011539881831610045,
+        "output": 0.005275374551593163
+      }
+    },
+    "po2_root": {
+      "scales": {
+        "input": 0.005679484427444578,
+        "aggregate1": 0.005502526215680941,
+        "hidden": 0.01669747622932975,
+        "aggregate2": 0.016053725415327416,
+        "output": 0.12119901461864081
+      },
+      "po2_shifts": {
+        "layer1": {
+          "neighbor_shift": 9,
+          "root_shift": 9
+        },
+        "layer2": {
+          "neighbor_shift": 10,
+          "root_shift": 10
+        }
+      },
+      "saturation_percent": {
+        "input": 0.002307976366322009,
+        "aggregate1": 0.0,
+        "hidden": 0.0,
+        "aggregate2": 0.0,
+        "output": 0.0
+      }
+    }
+  }
+}

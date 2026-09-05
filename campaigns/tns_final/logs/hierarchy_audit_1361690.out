@@ -1,0 +1,85 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Wed Aug 26 11:58:02 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source campaigns/tns_final/scripts/hierarchy_audit.tcl
+# if {[llength $argv] != 2} {
+#     error "Usage: hierarchy_audit.tcl <checkpoint.dcp> <output.csv>"
+# }
+# set checkpoint [lindex $argv 0]
+# set output_csv [lindex $argv 1]
+# if {![file exists $checkpoint]} {
+#     error "Missing checkpoint: $checkpoint"
+# }
+# open_checkpoint $checkpoint
+Command: open_checkpoint /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/qat_dsp_V2A1_allcut_ssi_retime_route/final.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1545.355 ; gain = 0.000 ; free physical = 213952 ; free virtual = 249277
+INFO: [Device 21-403] Loading part xcvu13p-fsga2577-1-e
+Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3706.590 ; gain = 29.000 ; free physical = 202881 ; free virtual = 238698
+INFO: [Netlist 29-17] Analyzing 49531 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 4263.699 ; gain = 198.094 ; free physical = 199900 ; free virtual = 235719
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-5170] The checkpoint was created with non-default parameter values which do not match the current Vivado settings.  Mismatching parameters are:
+  general.maxThreads
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.89 ; elapsed = 00:00:00.94 . Memory (MB): peak = 5867.992 ; gain = 0.000 ; free physical = 197592 ; free virtual = 233448
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5867.992 ; gain = 0.000 ; free physical = 197592 ; free virtual = 233448
+Read PlaceDB: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 6397.281 ; gain = 529.289 ; free physical = 196624 ; free virtual = 232483
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6397.281 ; gain = 0.000 ; free physical = 196624 ; free virtual = 232483
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 6705.586 ; gain = 308.305 ; free physical = 196312 ; free virtual = 232172
+Read Physdb Files: Time (s): cpu = 00:00:35 ; elapsed = 00:00:25 . Memory (MB): peak = 6705.586 ; gain = 837.594 ; free physical = 196312 ; free virtual = 232172
+Restored from archive | CPU: 36.000000 secs | Memory: 747.943329 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:35 ; elapsed = 00:00:25 . Memory (MB): peak = 6705.586 ; gain = 837.594 ; free physical = 196313 ; free virtual = 232172
+Netlist sorting complete. Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.14 . Memory (MB): peak = 6705.586 ; gain = 0.000 ; free physical = 196295 ; free virtual = 232155
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 432 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 432 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:02:25 ; elapsed = 00:02:39 . Memory (MB): peak = 6705.621 ; gain = 5160.266 ; free physical = 196294 ; free virtual = 232154
+# set patterns {
+#     l1_root_channel
+#     l1_neighbor_channel
+#     l2_root_channel
+#     l2_neighbor_channel
+# }
+# set fh [open $output_csv w]
+# puts $fh "pattern,hier_cell,lut,ff,dsp,slr,bbox"
+# set total_units 0
+# foreach pattern $patterns {
+#     set cells [get_cells -hierarchical -regexp -filter "IS_PRIMITIVE == 0" ".*${pattern}.*"]
+#     foreach cell $cells {
+#         set leaf_cells [get_cells -hierarchical -of_objects $cell -filter {IS_PRIMITIVE == 1}]
+#         set lut_count 0
+#         set ff_count 0
+#         set dsp_count 0
+#         foreach leaf $leaf_cells {
+#             set ref [get_property REF_NAME $leaf]
+#             if {[string match "LUT*" $ref] || [string match "*LUT6*" $ref]} { incr lut_count }
+#             if {[string match "FD*" $ref]} { incr ff_count }
+#             if {[string match "DSP*" $ref]} { incr dsp_count }
+#         }
+#         set slrs [lsort -unique [get_property -quiet SLR_NAME [get_sites -quiet -of_objects $leaf_cells]]]
+#         set bbox [get_property -quiet BBOX [get_pblocks -quiet -of_objects $cell]]
+#         puts $fh "$pattern,$cell,$lut_count,$ff_count,$dsp_count,\"$slrs\",\"$bbox\""
+#         incr total_units
+#     }
+# }
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 26 12:00:46 2026...

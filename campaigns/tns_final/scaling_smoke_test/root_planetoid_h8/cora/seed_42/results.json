@@ -1,0 +1,86 @@
+{
+  "dataset": "Cora",
+  "seed": 42,
+  "root_weight": true,
+  "dimensions": {
+    "nodes": 2708,
+    "edges": 10556,
+    "features": 1433,
+    "classes": 7,
+    "train_nodes": 140,
+    "validation_nodes": 500,
+    "test_nodes": 1000
+  },
+  "training": {
+    "float_best_epoch": 1,
+    "float_epochs": 3,
+    "qat_epochs": 3
+  },
+  "metrics": {
+    "float_root": {
+      "train": 0.1428571492433548,
+      "validation": 0.11400000005960464,
+      "test": 0.10300000011920929
+    },
+    "ptq_int8_root": {
+      "train": 0.1428571492433548,
+      "validation": 0.11400000005960464,
+      "test": 0.10300000011920929
+    },
+    "po2_root": {
+      "train": 0.1428571492433548,
+      "validation": 0.11400000005960464,
+      "test": 0.10300000011920929
+    },
+    "qat_root": {
+      "train": 0.1428571492433548,
+      "validation": 0.11400000005960464,
+      "test": 0.10300000011920929
+    }
+  },
+  "details": {
+    "ptq_int8_root": {
+      "scales": {
+        "input": 0.0005614409061867421,
+        "aggregate1": 0.0004570355682861148,
+        "hidden": 0.0018965356697247724,
+        "aggregate2": 0.0018965356697247724,
+        "output": 0.0029813184982209694
+      },
+      "po2_shifts": null,
+      "saturation_percent": {
+        "input": 0.002307976366322009,
+        "aggregate1": 0.002307976366322009,
+        "hidden": 0.004615952732644018,
+        "aggregate2": 0.004615952732644018,
+        "output": 0.0
+      }
+    },
+    "po2_root": {
+      "scales": {
+        "input": 0.0005614409061867421,
+        "aggregate1": 0.0004570355682861148,
+        "hidden": 0.0018965356697247724,
+        "aggregate2": 0.0018965356697247724,
+        "output": 0.0029813184982209694
+      },
+      "po2_shifts": {
+        "layer1": {
+          "neighbor_shift": 11,
+          "root_shift": 11
+        },
+        "layer2": {
+          "neighbor_shift": 9,
+          "root_shift": 9
+        }
+      },
+      "saturation_percent": {
+        "input": 0.002307976366322009,
+        "aggregate1": 0.0,
+        "hidden": 10.538220088626293,
+        "aggregate2": 11.470642540620384,
+        "output": 14.285714285714286
+      }
+    }
+  }
+}

@@ -1,0 +1,209 @@
+CRITICAL WARNING: [Common 17-183] Failed to open handle build/vivado_sweep/route_ssi_spread_high/vivado.jou. Please check access permission of directory 'build/vivado_sweep/route_ssi_spread_high'. You should restart the application from a writable working directory.
+CRITICAL WARNING: [Common 17-183] Failed to open handle build/vivado_sweep/route_ssi_spread_high/vivado.log. Please check access permission of directory 'build/vivado_sweep/route_ssi_spread_high'. You should restart the application from a writable working directory.
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Tue Aug 18 20:49:22 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source hls/run_vivado_finalist_route.tcl
+# foreach required_env {FINALIST_NAME SOURCE_RUN} {
+#     if {![info exists ::env($required_env)] || $::env($required_env) eq ""} {
+#         error "Missing required environment variable $required_env"
+#     }
+# }
+# set script_dir [file dirname [file normalize [info script]]]
+# set repo_root [file normalize [file join $script_dir ..]]
+# set sweep_dir [file join $repo_root build vivado_sweep]
+# set finalist_name $::env(FINALIST_NAME)
+# set source_run $::env(SOURCE_RUN)
+# set source_checkpoint [file join $sweep_dir $source_run post_place.dcp]
+# set output_dir [file join $sweep_dir route_$finalist_name]
+# set reports_dir [file join $output_dir reports]
+# set start_time [clock seconds]
+# if {![file exists $source_checkpoint]} {
+#     error "Missing screened post-place checkpoint: $source_checkpoint"
+# }
+# file mkdir $output_dir
+# file mkdir $reports_dir
+# set vivado_threads [expr {
+#     [info exists ::env(SLURM_CPUS_PER_TASK)]
+#         ? $::env(SLURM_CPUS_PER_TASK)
+#         : 8
+# }]
+# set_param general.maxThreads $vivado_threads
+# proc internal_wns {delay_type} {
+#     set paths [get_timing_paths \
+#         -from [all_registers] \
+#         -to [all_registers] \
+#         -delay_type $delay_type \
+#         -max_paths 1 \
+#         -quiet]
+#     if {[llength $paths] == 0} {
+#         return "NA"
+#     }
+#     return [get_property SLACK [lindex $paths 0]]
+# }
+# proc safe_property {object property_name} {
+#     if {$object eq "" || [llength $object] == 0} {
+#         return "NA"
+#     }
+#     if {[lsearch -exact [list_property $object] $property_name] < 0} {
+#         return "NA"
+#     }
+#     set value [get_property $property_name $object]
+#     if {$value eq ""} {
+#         return "NA"
+#     }
+#     return $value
+# }
+# proc object_slr {object} {
+#     if {$object eq "" || [llength $object] == 0} {
+#         return "NA"
+#     }
+#     set cell [get_cells -quiet -of_objects $object]
+#     if {[llength $cell] == 0} {
+#         set cell $object
+#     }
+#     set slr [get_slrs -quiet -of_objects $cell]
+#     if {[llength $slr] == 0} {
+#         return "NA"
+#     }
+#     return [get_property NAME [lindex $slr 0]]
+# }
+# proc path_cell_details {path} {
+#     set refs {}
+#     set names {}
+#     set max_fanout 0
+#     set dsp_involved 0
+#     set points {}
+#     if {[lsearch -exact [list_property $path] PATH] >= 0} {
+#         set points [get_property PATH $path]
+#     }
+#     foreach point $points {
+#         set pin [safe_property $point PIN]
+#         if {$pin eq "NA"} {
+#             continue
+#         }
+#         set cell [get_cells -quiet -of_objects $pin]
+#         if {[llength $cell] > 0} {
+#             set cell [lindex $cell 0]
+#             set cell_name [get_property NAME $cell]
+#             set ref_name [safe_property $cell REF_NAME]
+#             lappend names $cell_name
+#             lappend refs $ref_name
+#             if {[string match "DSP*" $ref_name]} {
+#                 set dsp_involved 1
+#             }
+#         }
+#         foreach net [get_nets -quiet -of_objects $pin] {
+#             set fanout [llength [get_pins -quiet -leaf -of_objects $net]]
+#             if {$fanout > $max_fanout} {
+#                 set max_fanout $fanout
+#             }
+#         }
+#     }
+#     return [list \
+#         [join [lsort -unique $refs] ","] \
+#         [join [lsort -unique $names] ","] \
+#         $max_fanout \
+#         $dsp_involved]
+# }
+# proc write_top_internal_diagnostics {reports_dir stage} {
+#     set paths [get_timing_paths \
+#         -from [all_registers] \
+#         -to [all_registers] \
+#         -delay_type max \
+#         -max_paths 20 \
+#         -quiet]
+# 
+#     report_timing \
+#         -from [all_registers] \
+#         -to [all_registers] \
+#         -delay_type max \
+#         -max_paths 20 \
+#         -path_type full_clock_expanded \
+#         -file [file join $reports_dir internal_top20_${stage}.rpt]
+# 
+#     set output [open [file join $reports_dir internal_top20_${stage}.tsv] w]
+#     puts $output [join [list \
+#         rank slack_ns startpoint endpoint source_slr destination_slr \
+#         logic_levels total_delay_ns cell_delay_ns net_delay_ns clock_skew_ns \
+#         max_fanout dsp_involved crosses_slr cell_types hls_cell_names] "\t"]
+# 
+#     set rank 0
+#     foreach path $paths {
+#         incr rank
+#         set startpoint [safe_property $path STARTPOINT_PIN]
+#         set endpoint [safe_property $path ENDPOINT_PIN]
+#         set source_slr [object_slr $startpoint]
+#         set destination_slr [object_slr $endpoint]
+#         set crosses_slr [expr {
+#             $source_slr ne "NA" &&
+#             $destination_slr ne "NA" &&
+#             $source_slr ne $destination_slr
+#         }]
+#         lassign [path_cell_details $path] cell_types cell_names max_fanout dsp_involved
+#         puts $output [join [list \
+#             $rank \
+#             [safe_property $path SLACK] \
+#             $startpoint \
+#             $endpoint \
+#             $source_slr \
+#             $destination_slr \
+#             [safe_property $path LOGIC_LEVELS] \
+#             [safe_property $path DATAPATH_DELAY] \
+#             [safe_property $path LOGIC_DELAY] \
+#             [safe_property $path NET_DELAY] \
+#             [safe_property $path SKEW] \
+#             $max_fanout \
+#             $dsp_involved \
+#             $crosses_slr \
+#             $cell_types \
+#             $cell_names] "\t"]
+#     }
+#     close $output
+# }
+# proc report_internal_stage {reports_dir stage include_diagnostics summary_file} {
+#     report_timing \
+#         -from [all_registers] \
+#         -to [all_registers] \
+#         -delay_type max \
+#         -max_paths 100 \
+#         -path_type full_clock_expanded \
+#         -file [file join $reports_dir timing_internal_setup_${stage}.rpt]
+#     report_timing \
+#         -from [all_registers] \
+#         -to [all_registers] \
+#         -delay_type min \
+#         -max_paths 100 \
+#         -path_type full_clock_expanded \
+#         -file [file join $reports_dir timing_internal_hold_${stage}.rpt]
+#     set setup_wns [internal_wns max]
+#     set hold_wns [internal_wns min]
+#     puts $summary_file "${stage}_internal_setup_wns_ns=$setup_wns"
+#     puts $summary_file "${stage}_internal_hold_wns_ns=$hold_wns"
+#     puts "${stage}_INTERNAL_SETUP_WNS_NS=$setup_wns"
+#     puts "${stage}_INTERNAL_HOLD_WNS_NS=$hold_wns"
+#     if {$include_diagnostics} {
+#         write_top_internal_diagnostics $reports_dir $stage
+#     }
+# }
+# puts "FINALIST_NAME=$finalist_name"
+FINALIST_NAME=ssi_spread_high
+# puts "SOURCE_CHECKPOINT=$source_checkpoint"
+SOURCE_CHECKPOINT=/mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/screen_ssi_spread_high/post_place.dcp
+# puts "ROUTE_DIRECTIVE=Default"
+ROUTE_DIRECTIVE=Default
+# puts "VIVADO_MAX_THREADS=$vivado_threads"
+VIVADO_MAX_THREADS=32
+# open_checkpoint $source_checkpoint
+Command: open_checkpoint /mnt_pool/c3_users/user/pleguina/graphsage_vivado_2024_1_sweep/build/vivado_sweep/screen_ssi_spread_high/post_place.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1473.922 ; gain = 7.938 ; free physical = 246388 ; free virtual = 253461
+INFO: [Device 21-403] Loading part xcvu13p-fsga2577-1-e

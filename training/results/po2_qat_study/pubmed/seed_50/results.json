@@ -1,0 +1,40 @@
+{
+  "dataset": "PubMed",
+  "metric": "accuracy",
+  "seed": 50,
+  "root_weight": true,
+  "normalize": false,
+  "project": false,
+  "epochs": 200,
+  "best_epoch": 8,
+  "metrics": {
+    "train": 1.0,
+    "validation": 0.800000011920929,
+    "test": 0.7639999985694885
+  },
+  "activation_scales": {
+    "input": 0.003900371433243038,
+    "aggregate1": 0.003857285488308884,
+    "hidden": 0.015087604522705078,
+    "aggregate2": 0.014710324017081673,
+    "output": 0.0681219851876807
+  },
+  "weight_scales": {
+    "neighbor1": 0.005542640141614779,
+    "root1": 0.0060296119667413665,
+    "neighbor2": 0.00514634434632429,
+    "root2": 0.005517117620453121
+  },
+  "po2_shifts": {
+    "layer1": {
+      "aggregate": 12,
+      "neighbor": 9,
+      "root": 9
+    },
+    "layer2": {
+      "aggregate": 12,
+      "neighbor": 10,
+      "root": 10
+    }
+  }
+}

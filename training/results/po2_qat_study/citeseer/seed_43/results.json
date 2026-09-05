@@ -1,0 +1,40 @@
+{
+  "dataset": "CiteSeer",
+  "metric": "accuracy",
+  "seed": 43,
+  "root_weight": true,
+  "normalize": false,
+  "project": false,
+  "epochs": 200,
+  "best_epoch": 100,
+  "metrics": {
+    "train": 1.0,
+    "validation": 0.6759999990463257,
+    "test": 0.6330000162124634
+  },
+  "activation_scales": {
+    "input": 0.004951790092498299,
+    "aggregate1": 0.004951790092498299,
+    "hidden": 0.014498905872735451,
+    "aggregate2": 0.014498905872735451,
+    "output": 0.09324345626230315
+  },
+  "weight_scales": {
+    "neighbor1": 0.005955970662785327,
+    "root1": 0.006337508441895011,
+    "neighbor2": 0.006057076566801297,
+    "root2": 0.0061913803806455114
+  },
+  "po2_shifts": {
+    "layer1": {
+      "aggregate": 12,
+      "neighbor": 9,
+      "root": 9
+    },
+    "layer2": {
+      "aggregate": 12,
+      "neighbor": 10,
+      "root": 10
+    }
+  }
+}

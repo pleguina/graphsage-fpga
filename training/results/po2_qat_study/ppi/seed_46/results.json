@@ -1,0 +1,39 @@
+{
+  "dataset": "PPI",
+  "metric": "micro_f1",
+  "seed": 46,
+  "root_weight": true,
+  "normalize": false,
+  "project": false,
+  "epochs": 200,
+  "best_epoch": 151,
+  "metrics": {
+    "validation": 0.4617757892459897,
+    "test": 0.4691655158808444
+  },
+  "activation_scales": {
+    "input": 0.1684359302670937,
+    "aggregate1": 0.12125570192111759,
+    "hidden": 0.09419318071500522,
+    "aggregate2": 0.032662902291365495,
+    "output": 0.06167334083497055
+  },
+  "weight_scales": {
+    "neighbor1": 0.006329648607359158,
+    "root1": 0.0028303770099099225,
+    "neighbor2": 0.001616337754594998,
+    "root2": 0.0013689599403246182
+  },
+  "po2_shifts": {
+    "layer1": {
+      "aggregate": 12,
+      "neighbor": 7,
+      "root": 8
+    },
+    "layer2": {
+      "aggregate": 10,
+      "neighbor": 10,
+      "root": 9
+    }
+  }
+}

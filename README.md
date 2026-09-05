@@ -5,21 +5,37 @@ Sources, build/run scripts, and result data for a two-layer SAGEConv
 `xcvu13p-fsga2577-1-e` device at a 2.77 ns implementation constraint
 (360 MHz operating target).
 
-This repository is the physical-implementation and verification campaign:
-architecture ablation, DSP/fabric multiplier mapping, accumulator pipeline
+This repository covers the physical-implementation and verification campaign
+(architecture ablation, DSP/fabric multiplier mapping, accumulator pipeline
 cuts, placement/routing strategy robustness, clock-period robustness,
 hidden-width scaling, RTL/C-simulation verification, and the integrated
-timing-closure wrapper. Model training and quantization (Cora/CiteSeer/
-PubMed/PPI, QAT, PO2 projection) live in a separate repository and are only
-referenced here where their exported weights feed the HLS builds.
+timing-closure wrapper) plus the model-training material needed to reproduce
+the reported accuracy numbers (`training/`). The full training/quantization/
+HLS-generation pipeline, developed independently, also has its own repository
+at `github.com/INTREPID-hep/graphsage-cora`.
 
 ## Layout
 
 ```
+training/
+  src/                   model and quantization source (float, PTQ-INT8, QAT v2,
+                         QAT->PO2, plus subgraph extraction and export scripts)
+  tests/                 training/eval drivers, including run_po2_qat_study.py,
+                         and standalone arithmetic/initialization unit tests
+  data/Cora/             local Cora dataset cache; CiteSeer/PubMed/PPI are
+                         fetched on demand by PyTorch Geometric
+  configs/model_config.yaml
+  results/po2_qat_study/            per-seed (42-51) results.json + trained
+                                     po2_qat_root.pth for Cora/CiteSeer/PubMed/PPI
+                                     -- this is the exact source of the accuracy
+                                     numbers reported for the deployed QAT->PO2
+                                     model
+  results/po2_qat_multiseed_summary.json   paired per-seed statistics across
+                                            the three tested quantization flows
 campaigns/
   qat_dsp_partitioning/   DSP/fabric mapping and pipeline-cut source campaign
     frozen/               pinned source/config/result snapshot (A0-A5, V1-V4, V2A1*)
-    source/, hls/, results/, slurm/, analysis/   the working tree it was pinned from
+    hls/, slurm/, analysis/, logs/   the working tree it was pinned from
   tns_final/              final result-generation campaign
     configs/              JSON descriptors for each sweep (below)
     scripts/              Python analysis/aggregation (build *.csv from raw reports)
@@ -57,7 +73,7 @@ exploration/
 | Hidden-width scaling (H=16/24/32) | `campaigns/tns_final/slurm_scaling/` | `campaigns/tns_final/paper_data/scaling.csv` | Two independent series: common policy (`route_width_variant.sbatch`) and the A5 tuned strategy (`route_width_variant_a5strategy.sbatch`); do not merge them into one curve. |
 | Model-seed routing robustness (S0-S2) | `campaigns/tns_final/configs/model_seeds/seeds.json` | `campaigns/tns_final/paper_data/model_seeds.csv` | |
 | Critical-path attribution | -- | `campaigns/tns_final/paper_data/critical_path_categories.csv`, `critical_path_semantic_groups_A5.csv` | Built by `campaigns/tns_final/scripts/build_critical_path_categories.py`. |
-| ML accuracy (QAT / QAT->PO2 / PO2-constrained QAT) | -- | `campaigns/tns_final/paper_data/ml_accuracy_table.csv`, `campaigns/tns_final/results/true_qat_po2/` | `campaigns/tns_final/scripts/true_qat_po2_experiment.py` and `aggregate_ml_accuracy_table.py`. |
+| ML accuracy (QAT / QAT->PO2 / PO2-constrained QAT) | -- | `campaigns/tns_final/paper_data/ml_accuracy_table.csv` (sourced from `training/results/po2_qat_study/`), `campaigns/tns_final/results/true_qat_po2/` | `training/tests/run_po2_qat_study.py` generates the per-seed results; `campaigns/tns_final/scripts/aggregate_ml_accuracy_table.py` aggregates them; `true_qat_po2_experiment.py` is the separate controlled PO2-constrained-training comparison. |
 | Verification (CSim/RTL cosim/streaming) | `campaigns/tns_final/slurm/01_csim_final.sbatch`, `02_cosim800_final_masks.sbatch`, `02_csim_density_coverage.sbatch`, `03_cosim_streaming_no_bubble.sbatch` | corresponding files in `campaigns/tns_final/logs/` | |
 | Integrated wrapper | `campaigns/tns_final/wrapper/` | `campaigns/tns_final/logs/vivado_integrated_wrapper_*.out` | Independent build from the standalone core, with its own XDC/strategy. |
 

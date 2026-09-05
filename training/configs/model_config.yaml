@@ -1,0 +1,96 @@
+# GraphSAGE Model Configuration
+# Central configuration for all model variants (Float, PTQ, QAT)
+
+# Dataset Configuration
+dataset:
+  name: "Cora"
+  root: "../data"
+  num_features: 1433  # Cora has 1433 features
+  num_classes: 7      # Cora has 7 classes
+
+# Base Model Configuration (Full size)
+base_model:
+  hidden_channels: 64
+  dropout: 0.5
+  epochs: 200
+  lr: 0.01
+  weight_decay: 5e-4
+
+# Reduced Model Configuration (FPGA-friendly)
+reduced_model:
+  in_channels_reduced: 16   # Projected input dimension
+  hidden_channels: 24        # Hidden layer dimension
+  out_channels: 7           # Output classes (from dataset)
+  dropout: 0.5
+  use_projection: true
+  root_weight: true         # Match the default PyG SAGEConv
+
+  # Training hyperparameters
+  epochs: 200
+  lr: 0.01
+  weight_decay: 5e-4
+
+# QAT Model Configuration
+qat_model:
+  # Architecture (should match reduced_model for fair comparison)
+  in_channels_reduced: 16
+  hidden_channels: 24
+  out_channels: 7
+  dropout: 0.5
+  use_projection: true
+  root_weight: true
+
+  # Quantization settings
+  num_bits_acts: 8          # Activation quantization bits
+  num_bits_weights: 8       # Weight quantization bits
+
+  # Training hyperparameters
+  epochs: 200
+  lr: 0.01                  # QAT might need lower LR
+  weight_decay: 5e-4
+
+  # Calibration settings
+  calibration_batches: 50
+
+# Alternative QAT Configuration (larger model for better accuracy)
+qat_model_large:
+  in_channels_reduced: 32   # Increased from 16
+  hidden_channels: 48       # Increased from 24
+  out_channels: 7
+  dropout: 0.5
+  use_projection: true
+  root_weight: false
+
+  num_bits_acts: 8
+  num_bits_weights: 8
+
+  epochs: 200
+  lr: 0.005                 # Lower LR for stability
+  weight_decay: 5e-4
+
+  calibration_batches: 100  # More calibration for larger model
+
+# Quantization Export Settings
+quantization:
+  num_bits: 8
+  symmetric: true
+
+  # Subgraph settings for test vectors
+  test_subgraph_nodes: 8
+
+  # Output directories
+  output_dir_ptq: "../build/quantized"
+  output_dir_qat: "../build/quantized_qat"
+  test_vectors_dir_ptq: "../build/test_vectors"
+  test_vectors_dir_qat: "../build/test_vectors_qat"
+
+# Build/Output Directories
+paths:
+  models: "../build/models"
+  plots: "../build/plots"
+  subgraph: "../build/subgraph"
+  hls: "../build/hls"
+
+# Active Configuration Selection
+# Change this to switch between configurations
+active_qat_config: "qat_model"  # Options: "qat_model" or "qat_model_large"

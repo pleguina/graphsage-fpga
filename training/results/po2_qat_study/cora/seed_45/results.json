@@ -1,0 +1,40 @@
+{
+  "dataset": "Cora",
+  "metric": "accuracy",
+  "seed": 45,
+  "root_weight": true,
+  "normalize": false,
+  "project": false,
+  "epochs": 200,
+  "best_epoch": 91,
+  "metrics": {
+    "train": 1.0,
+    "validation": 0.7440000176429749,
+    "test": 0.7710000276565552
+  },
+  "activation_scales": {
+    "input": 0.0064334315577829915,
+    "aggregate1": 0.005319886320219265,
+    "hidden": 0.02568917574844961,
+    "aggregate2": 0.022083406373271792,
+    "output": 0.15096165814737636
+  },
+  "weight_scales": {
+    "neighbor1": 0.007222790887036662,
+    "root1": 0.00707516801638866,
+    "neighbor2": 0.0068296278555562175,
+    "root2": 0.006148411063697394
+  },
+  "po2_shifts": {
+    "layer1": {
+      "aggregate": 12,
+      "neighbor": 9,
+      "root": 9
+    },
+    "layer2": {
+      "aggregate": 12,
+      "neighbor": 10,
+      "root": 10
+    }
+  }
+}
